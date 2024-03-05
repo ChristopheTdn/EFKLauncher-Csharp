@@ -1,0 +1,140 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Ressources\gfx\accolade.png" />
+    <None Remove="Ressources\gfx\agplv3.png" />
+    <None Remove="Ressources\gfx\checked.png" />
+    <None Remove="Ressources\gfx\chine.png" />
+    <None Remove="Ressources\gfx\danger.png" />
+    <None Remove="Ressources\gfx\discord.png" />
+    <None Remove="Ressources\gfx\EFK.png" />
+    <None Remove="Ressources\gfx\espagne.png" />
+    <None Remove="Ressources\gfx\favoris.png" />
+    <None Remove="Ressources\gfx\france.png" />
+    <None Remove="Ressources\gfx\info.png" />
+    <None Remove="Ressources\gfx\korean.png" />
+    <None Remove="Ressources\gfx\performance.png" />
+    <None Remove="Ressources\gfx\point_interrogation.png" />
+    <None Remove="Ressources\gfx\pyqt.png" />
+    <None Remove="Ressources\gfx\pyside.png" />
+    <None Remove="Ressources\gfx\pz.png" />
+    <None Remove="Ressources\gfx\royaumeunis.png" />
+    <None Remove="Ressources\gfx\russe.png" />
+    <None Remove="Ressources\gfx\skull.png" />
+    <None Remove="Ressources\gfx\Steam_Icon.png" />
+    <None Remove="Ressources\gfx\supprimer.png" />
+    <None Remove="Ressources\gfx\tt.jpeg" />
+    <None Remove="Ressources\gfx\Twitch-logo.png" />
+    <None Remove="Ressources\gfx\update.png" />
+    <None Remove="Ressources\gfx\valide.png" />
+    <None Remove="Ressources\gfx\youtube.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Ressources\gfx\accolade.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\agplv3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\checked.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\chine.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\danger.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\discord.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\EFK.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\espagne.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\favoris.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\france.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\info.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\korean.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\performance.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\point_interrogation.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\pyqt.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\pyside.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\pz.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\royaumeunis.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\russe.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\skull.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\Steam_Icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\supprimer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\tt.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\Twitch-logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\update.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\valide.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\gfx\youtube.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Ressources\EFK_Ressources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EFK_Ressources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Ressources\EFK_Ressources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EFK_Ressources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
