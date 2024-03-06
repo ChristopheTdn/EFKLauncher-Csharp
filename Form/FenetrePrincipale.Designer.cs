@@ -35,7 +35,8 @@
             button_LaunchPZ = new Button();
             checkBox_DebugMode = new CheckBox();
             groupBox_Repertoire = new GroupBox();
-            textBox1 = new TextBox();
+            button_locateSaveDiR = new Button();
+            textBox_SaveDir = new TextBox();
             label_SaveGame = new Label();
             textBox_ProfilPZ = new TextBox();
             label_ProfilPZ = new Label();
@@ -113,7 +114,8 @@
             // 
             // groupBox_Repertoire
             // 
-            groupBox_Repertoire.Controls.Add(textBox1);
+            groupBox_Repertoire.Controls.Add(button_locateSaveDiR);
+            groupBox_Repertoire.Controls.Add(textBox_SaveDir);
             groupBox_Repertoire.Controls.Add(label_SaveGame);
             groupBox_Repertoire.Controls.Add(textBox_ProfilPZ);
             groupBox_Repertoire.Controls.Add(label_ProfilPZ);
@@ -124,14 +126,24 @@
             groupBox_Repertoire.TabStop = false;
             groupBox_Repertoire.Text = "Repertoire utilisateur";
             // 
-            // textBox1
+            // button_locateSaveDiR
             // 
-            textBox1.BackColor = SystemColors.ButtonHighlight;
-            textBox1.Location = new Point(96, 61);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(404, 23);
-            textBox1.TabIndex = 3;
+            button_locateSaveDiR.Location = new Point(540, 61);
+            button_locateSaveDiR.Name = "button_locateSaveDiR";
+            button_locateSaveDiR.Size = new Size(84, 23);
+            button_locateSaveDiR.TabIndex = 4;
+            button_locateSaveDiR.Text = "Localiser";
+            button_locateSaveDiR.UseVisualStyleBackColor = true;
+            button_locateSaveDiR.Click += button_locateSaveDiR_Click;
+            // 
+            // textBox_SaveDir
+            // 
+            textBox_SaveDir.BackColor = SystemColors.ButtonHighlight;
+            textBox_SaveDir.Location = new Point(96, 61);
+            textBox_SaveDir.Name = "textBox_SaveDir";
+            textBox_SaveDir.ReadOnly = true;
+            textBox_SaveDir.Size = new Size(404, 23);
+            textBox_SaveDir.TabIndex = 3;
             // 
             // label_SaveGame
             // 
@@ -195,9 +207,10 @@
         private Button button_LaunchPZ;
         public CheckBox checkBox_DebugMode;
         private GroupBox groupBox_Repertoire;
-        private TextBox textBox1;
+        private TextBox textBox_SaveDir;
         private Label label_SaveGame;
         private TextBox textBox_ProfilPZ;
         private Label label_ProfilPZ;
+        private Button button_locateSaveDiR;
     }
 }

@@ -1,4 +1,5 @@
 using EFKLauncher.Classes;
+using Microsoft.VisualBasic.ApplicationServices;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Security.Policy;
@@ -14,9 +15,9 @@ namespace EFKLauncher
         }
         private void FenetrePrincipale_Load(object sender, EventArgs e)
         {
-            
+
             this.textBox_ProfilPZ.Text = Core.getProfilPZDirectory();
-            
+
         }
         private void label_CollectionSteam_Click(object sender, EventArgs e)
         {
@@ -35,6 +36,18 @@ namespace EFKLauncher
             }
         }
 
+        private void button_locateSaveDiR_Click(object sender, EventArgs e)
+        {
+            var folderDialog = new FolderBrowserDialog();
+            folderDialog.Description = "Choose a Save Game Directory for WipeMap Process.";
+            folderDialog.SelectedPath = textBox_ProfilPZ.Text + @"\Saves\Sandbox\"; ;
+            DialogResult result = folderDialog.ShowDialog();
 
+            if (result == DialogResult.OK)
+            {
+                textBox_SaveDir.Text = folderDialog.SelectedPath;
+                //Use folder path
+            }
+        }
     }
 }
