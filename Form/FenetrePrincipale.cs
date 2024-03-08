@@ -6,6 +6,7 @@ using System.Security.Policy;
 using System.Configuration;
 using System.Windows.Forms;
 using System.IO;
+using Microsoft.Win32;
 
 namespace EFKLauncher
 {
@@ -13,7 +14,6 @@ namespace EFKLauncher
     {
         public FenetrePrincipale()
         {
-
             InitializeComponent();
         }
         private void FenetrePrincipale_Load(object sender, EventArgs e)
@@ -26,6 +26,13 @@ namespace EFKLauncher
                 this.textBox_SaveDir.Text = "";
                 Config.setConfig("SaveDir", "");
             }
+            this.checkBox_ActivateWipeMap.Checked = false;
+            this.button_WIPEMAP.Enabled = false;
+            this.checkBox_ActivateWipeMap.Enabled = Directory.Exists(this.textBox_SaveDir.Text);
+
+
+
+            Core.WriteLog(richTextBox_Log, "Setting Savedir");
             // Profil
             this.textBox_ProfilPZ.Text = Config.readConfig("profil");
             if (!Directory.Exists(this.textBox_ProfilPZ.Text))
@@ -33,12 +40,20 @@ namespace EFKLauncher
                 this.textBox_ProfilPZ.Text = Core.getProfilPZDirectory();
                 Config.setConfig("Profil", this.textBox_ProfilPZ.Text);
             }
+            Core.WriteLog(richTextBox_Log, "Setting Pz Profil Directory");
+
             //DebugMode
             if (Config.readConfig("DebugMode") == "true")
             {
                 this.checkBox_DebugMode.Checked = true;
             }
+            Core.WriteLog(richTextBox_Log, "Setting Debug Mode CheckBox");
+            //SteamExe
+            Config.setConfig("SteamEXE", (string)Registry.GetValue("HKEY_CURRENT_USER\\Software\\Valve\\Steam", "SteamExe", "cle Inconnue"));
+            Core.WriteLog(richTextBox_Log, "Find Steam.exe : " + Config.readConfig("SteamEXE"));
+
             //Copyfile
+
             Core.copyFile(@"Config\difficulty\EFK Easy.cfg",
                             this.textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK Easy.cfg"
                          );
@@ -48,6 +63,9 @@ namespace EFKLauncher
             Core.copyFile(@"Config\difficulty\EFK STD.cfg",
                             this.textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK STD.cfg"
                          );
+            Core.WriteLog(richTextBox_Log, "Install SandBox Presets : EFK Easy.cfg, EFK Hard.cfg, EFK STD.cfg");
+
+
             // PreIni EFKMod
             if (Config.readConfig("PreIniEFK") == "Not Found" ||
                 Config.readConfig("PreIniEFK") == "true"
@@ -70,14 +88,16 @@ namespace EFKLauncher
 
         private void button_LaunchPZ_Click(object sender, EventArgs e)
         {
-            if (checkBox_DebugMode.Checked)
+            Core.WriteLog(richTextBox_Log, "LAUNCH-PZ : init Launch PZ ");
+            if (this.radioButton_EFKModPreInstall.Checked)
             {
-                Core.RunCmd("steam://run/108600/-debug/");
+                Core.copyFile(@"Config\EFK\AdvancedEFK_default.txt",
+                              this.textBox_ProfilPZ.Text + @"\mods\default.txt");
+                Core.WriteLog(richTextBox_Log, "LAUNCH-PZ : update \"\\mods\\default.txt\" with EFK Mod list");
             }
-            else
-            {
-                Core.RunCmd("steam://run/108600/");
-            }
+            Core.WriteLog(richTextBox_Log, "LAUNCH-PZ : Debug mode >" + checkBox_DebugMode.Checked.ToString());
+            Core.launchPZ(richTextBox_Log, checkBox_DebugMode.Checked);
+
         }
 
         private void button_locateSaveDiR_Click(object sender, EventArgs e)
@@ -120,6 +140,31 @@ namespace EFKLauncher
             {
                 Config.setConfig("PreIniEFK", "false");
             }
+        }
+
+        private void checkBox_ActivateWipeMap_CheckedChanged(object sender, EventArgs e)
+        {
+            this.button_WIPEMAP.Enabled = checkBox_ActivateWipeMap.Checked;
+        }
+
+        private void button_WIPEMAP_Click(object sender, EventArgs e)
+        {
+            Core.WriteLog(richTextBox_Log, "WIPE MAP : Starting WIPEMAP");
+
+            string fileName = @"Config\delfile\fichiers.txt";
+            IEnumerable<string> lines = File.ReadLines(fileName);
+
+            foreach (string line in lines)
+            {
+                if (File.Exists(textBox_SaveDir.Text + "\\" + line))
+                {
+                    Core.delFile(
+                        richTextBox_Log,
+                        textBox_SaveDir.Text,
+                        line);
+                }
+            }
+            Core.WriteLog(richTextBox_Log, "WIPE MAP : Ending WIPEMAP");
         }
     }
 }

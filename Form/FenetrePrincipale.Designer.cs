@@ -52,6 +52,8 @@
             tabPage_EFKTab = new TabPage();
             richTextBox_Log = new RichTextBox();
             tabPage2 = new TabPage();
+            button_WIPEMAP = new Button();
+            checkBox_ActivateWipeMap = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox_EFKLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picture_Steam).BeginInit();
             groupBox_Repertoire.SuspendLayout();
@@ -301,11 +303,37 @@
             tabPage2.Text = "A Propos";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button_WIPEMAP
+            // 
+            button_WIPEMAP.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_WIPEMAP.Location = new Point(79, 651);
+            button_WIPEMAP.Name = "button_WIPEMAP";
+            button_WIPEMAP.Size = new Size(201, 51);
+            button_WIPEMAP.TabIndex = 9;
+            button_WIPEMAP.Text = "WIPE MAP";
+            button_WIPEMAP.UseVisualStyleBackColor = true;
+            button_WIPEMAP.Click += button_WIPEMAP_Click;
+            // 
+            // checkBox_ActivateWipeMap
+            // 
+            checkBox_ActivateWipeMap.AutoSize = true;
+            checkBox_ActivateWipeMap.Image = Ressources.EFK_Ressources.danger;
+            checkBox_ActivateWipeMap.Location = new Point(79, 701);
+            checkBox_ActivateWipeMap.Name = "checkBox_ActivateWipeMap";
+            checkBox_ActivateWipeMap.Size = new Size(201, 35);
+            checkBox_ActivateWipeMap.TabIndex = 10;
+            checkBox_ActivateWipeMap.Text = "Unlock  Wipe Map Bouton";
+            checkBox_ActivateWipeMap.TextImageRelation = TextImageRelation.ImageBeforeText;
+            checkBox_ActivateWipeMap.UseVisualStyleBackColor = true;
+            checkBox_ActivateWipeMap.CheckedChanged += checkBox_ActivateWipeMap_CheckedChanged;
+            // 
             // FenetrePrincipale
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(691, 789);
+            ClientSize = new Size(691, 748);
+            Controls.Add(checkBox_ActivateWipeMap);
+            Controls.Add(button_WIPEMAP);
             Controls.Add(tabControl1);
             Controls.Add(groupBox_PreInitEFK);
             Controls.Add(groupBox_Repertoire);
@@ -357,7 +385,9 @@
         private PictureBox pictureBox2;
         private TabControl tabControl1;
         private TabPage tabPage_EFKTab;
-        private RichTextBox richTextBox_Log;
         private TabPage tabPage2;
+        public RichTextBox richTextBox_Log;
+        private Button button_WIPEMAP;
+        private CheckBox checkBox_ActivateWipeMap;
     }
 }

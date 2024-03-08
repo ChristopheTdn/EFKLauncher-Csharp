@@ -10,6 +10,8 @@
     <SignAssembly>False</SignAssembly>
     <AssemblyOriginatorKeyFile>H:\Christophe\Documents\Clé SSH\cléprivée_ToF.ppk</AssemblyOriginatorKeyFile>
     <Title>EFK Launcher</Title>
+    <PackageIcon>EFK.png</PackageIcon>
+    <ApplicationIcon>Ressources\gfx\EFK.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -27,7 +29,6 @@
     <None Remove="Ressources\gfx\chine.png" />
     <None Remove="Ressources\gfx\danger.png" />
     <None Remove="Ressources\gfx\discord.png" />
-    <None Remove="Ressources\gfx\EFK.png" />
     <None Remove="Ressources\gfx\espagne.png" />
     <None Remove="Ressources\gfx\favoris.png" />
     <None Remove="Ressources\gfx\france.png" />
@@ -48,6 +49,10 @@
     <None Remove="Ressources\gfx\update.png" />
     <None Remove="Ressources\gfx\valide.png" />
     <None Remove="Ressources\gfx\youtube.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Ressources\gfx\EFK.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -161,6 +166,16 @@
     </None>
     <None Update="Config\difficulty\EFK STD.cfg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Config\EFK\AdvancedEFK_default.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Config\EFK\StandardEFK_default.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Ressources\gfx\EFK.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
