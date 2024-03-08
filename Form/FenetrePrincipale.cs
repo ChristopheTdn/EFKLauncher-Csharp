@@ -3,6 +3,9 @@ using Microsoft.VisualBasic.ApplicationServices;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Security.Policy;
+using System.Configuration;
+using System.Windows.Forms;
+using System.IO;
 
 namespace EFKLauncher
 {
@@ -15,9 +18,26 @@ namespace EFKLauncher
         }
         private void FenetrePrincipale_Load(object sender, EventArgs e)
         {
-
-            this.textBox_ProfilPZ.Text = Core.getProfilPZDirectory();
-
+            // Gestion Maj Parametre sur Interface
+            // Savedir
+            this.textBox_SaveDir.Text = Config.readConfig("SaveDir");
+            if (!Directory.Exists(this.textBox_SaveDir.Text))
+            {
+                this.textBox_SaveDir.Text = "";
+                Config.setConfig("SaveDir", "");
+            }
+            // Profil
+            this.textBox_ProfilPZ.Text = Config.readConfig("profil");
+            if (!Directory.Exists(this.textBox_ProfilPZ.Text))
+            {
+                this.textBox_ProfilPZ.Text = Core.getProfilPZDirectory();
+                Config.setConfig("Profil", this.textBox_ProfilPZ.Text);
+            }
+            //DebugMode
+            if (Config.readConfig("DebugMode") == "true")
+            {
+                this.checkBox_DebugMode.Checked = true;
+            }
         }
         private void label_CollectionSteam_Click(object sender, EventArgs e)
         {
@@ -46,7 +66,18 @@ namespace EFKLauncher
             if (result == DialogResult.OK)
             {
                 textBox_SaveDir.Text = folderDialog.SelectedPath;
-                //Use folder path
+                Config.setConfig("SaveDir", textBox_SaveDir.Text);
+            }
+        }
+
+        private void checkBox_DebugMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_DebugMode.Checked) {
+                Config.setConfig("DebugMode", "true");
+            }
+            else
+            {
+                Config.setConfig("DebugMode", "false");
             }
         }
     }

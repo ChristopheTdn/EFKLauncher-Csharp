@@ -40,6 +40,7 @@
             label_SaveGame = new Label();
             textBox_ProfilPZ = new TextBox();
             label_ProfilPZ = new Label();
+            folderBrowserDialog1 = new FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)pictureBox_EFKLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picture_Steam).BeginInit();
             groupBox_Repertoire.SuspendLayout();
@@ -111,6 +112,7 @@
             checkBox_DebugMode.TabIndex = 5;
             checkBox_DebugMode.Text = "Debug Mode";
             checkBox_DebugMode.UseVisualStyleBackColor = true;
+            checkBox_DebugMode.CheckedChanged += checkBox_DebugMode_CheckedChanged;
             // 
             // groupBox_Repertoire
             // 
@@ -212,5 +214,6 @@
         private TextBox textBox_ProfilPZ;
         private Label label_ProfilPZ;
         private Button button_locateSaveDiR;
+        private FolderBrowserDialog folderBrowserDialog1;
     }
 }
