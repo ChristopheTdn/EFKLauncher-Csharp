@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FenetrePrincipale));
             pictureBox_EFKLogo = new PictureBox();
             label_TitleEFKC = new Label();
             label_CollectionSteam = new Label();
@@ -315,6 +316,7 @@
             Controls.Add(label_TitleEFKC);
             Controls.Add(pictureBox_EFKLogo);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FenetrePrincipale";
             Text = "EFK Launcher";
             Load += FenetrePrincipale_Load;
