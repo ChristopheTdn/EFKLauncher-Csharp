@@ -38,6 +38,30 @@ namespace EFKLauncher
             {
                 this.checkBox_DebugMode.Checked = true;
             }
+            //Copyfile
+            Core.copyFile(@"Config\difficulty\EFK Easy.cfg",
+                            this.textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK Easy.cfg"
+                         );
+            Core.copyFile(@"Config\difficulty\EFK Hard.cfg",
+                            this.textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK Hard.cfg"
+                         );
+            Core.copyFile(@"Config\difficulty\EFK STD.cfg",
+                            this.textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK STD.cfg"
+                         );
+            // PreIni EFKMod
+            if (Config.readConfig("PreIniEFK") == "Not Found" ||
+                Config.readConfig("PreIniEFK") == "true"
+                )
+            {
+                this.radioButton_EFKModPreInstall.Checked = true;
+                Config.setConfig("PreIniEFK", "true");
+            }
+            else
+            {
+                this.radioButton_NoModif.Checked = true;
+            }
+
+
         }
         private void label_CollectionSteam_Click(object sender, EventArgs e)
         {
@@ -72,12 +96,29 @@ namespace EFKLauncher
 
         private void checkBox_DebugMode_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox_DebugMode.Checked) {
+            if (checkBox_DebugMode.Checked)
+            {
                 Config.setConfig("DebugMode", "true");
             }
             else
             {
                 Config.setConfig("DebugMode", "false");
+            }
+        }
+
+        private void radioButton_EFKModPreInstall_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.radioButton_EFKModPreInstall.Checked == true)
+            {
+                Config.setConfig("PreIniEFK", "true");
+            }
+        }
+
+        private void radioButton_NoModif_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.radioButton_NoModif.Checked == true)
+            {
+                Config.setConfig("PreIniEFK", "false");
             }
         }
     }

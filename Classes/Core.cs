@@ -64,5 +64,13 @@ namespace EFKLauncher.Classes
             return Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)+@"\Zomboid";
         }
 
+        static public void copyFile(string source, string dest)
+        {
+            if (File.Exists(source))
+            {
+                        File.Copy(source, dest, true);
+            }
+
+        }
     }
 }

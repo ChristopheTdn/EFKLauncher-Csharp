@@ -41,9 +41,24 @@
             textBox_ProfilPZ = new TextBox();
             label_ProfilPZ = new Label();
             folderBrowserDialog1 = new FolderBrowserDialog();
+            groupBox_PreInitEFK = new GroupBox();
+            richTextBox_PreActivationTip = new RichTextBox();
+            pictureBox2 = new PictureBox();
+            radioButton_NoModif = new RadioButton();
+            radioButton_EFKModPreInstall = new RadioButton();
+            pictureBox1 = new PictureBox();
+            tabControl1 = new TabControl();
+            tabPage_EFKTab = new TabPage();
+            richTextBox_Log = new RichTextBox();
+            tabPage2 = new TabPage();
             ((System.ComponentModel.ISupportInitialize)pictureBox_EFKLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picture_Steam).BeginInit();
             groupBox_Repertoire.SuspendLayout();
+            groupBox_PreInitEFK.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            tabControl1.SuspendLayout();
+            tabPage_EFKTab.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox_EFKLogo
@@ -176,11 +191,122 @@
             label_ProfilPZ.Text = "Profil PZ :";
             label_ProfilPZ.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // groupBox_PreInitEFK
+            // 
+            groupBox_PreInitEFK.Controls.Add(richTextBox_PreActivationTip);
+            groupBox_PreInitEFK.Controls.Add(pictureBox2);
+            groupBox_PreInitEFK.Controls.Add(radioButton_NoModif);
+            groupBox_PreInitEFK.Controls.Add(radioButton_EFKModPreInstall);
+            groupBox_PreInitEFK.Controls.Add(pictureBox1);
+            groupBox_PreInitEFK.Location = new Point(30, 305);
+            groupBox_PreInitEFK.Name = "groupBox_PreInitEFK";
+            groupBox_PreInitEFK.Size = new Size(641, 87);
+            groupBox_PreInitEFK.TabIndex = 7;
+            groupBox_PreInitEFK.TabStop = false;
+            groupBox_PreInitEFK.Text = "Pré Activation MOD EFK";
+            // 
+            // richTextBox_PreActivationTip
+            // 
+            richTextBox_PreActivationTip.BackColor = SystemColors.Control;
+            richTextBox_PreActivationTip.BorderStyle = BorderStyle.None;
+            richTextBox_PreActivationTip.ForeColor = SystemColors.WindowText;
+            richTextBox_PreActivationTip.ImeMode = ImeMode.On;
+            richTextBox_PreActivationTip.Location = new Point(382, 15);
+            richTextBox_PreActivationTip.Name = "richTextBox_PreActivationTip";
+            richTextBox_PreActivationTip.Size = new Size(253, 66);
+            richTextBox_PreActivationTip.TabIndex = 3;
+            richTextBox_PreActivationTip.Text = "IMPORTANT :\nLe launcher force la pre selection des Mods dans EFK. \nSi tu desires Modder le jeu, choisir : No Modif";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Ressources.EFK_Ressources.accolade;
+            pictureBox2.Location = new Point(362, 15);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(14, 60);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            // 
+            // radioButton_NoModif
+            // 
+            radioButton_NoModif.AutoSize = true;
+            radioButton_NoModif.Location = new Point(80, 45);
+            radioButton_NoModif.Name = "radioButton_NoModif";
+            radioButton_NoModif.Size = new Size(245, 19);
+            radioButton_NoModif.TabIndex = 1;
+            radioButton_NoModif.TabStop = true;
+            radioButton_NoModif.Text = "No Modif (Pour les moddeurs Seulement)";
+            radioButton_NoModif.UseVisualStyleBackColor = true;
+            radioButton_NoModif.CheckedChanged += radioButton_NoModif_CheckedChanged;
+            // 
+            // radioButton_EFKModPreInstall
+            // 
+            radioButton_EFKModPreInstall.AutoSize = true;
+            radioButton_EFKModPreInstall.Location = new Point(80, 22);
+            radioButton_EFKModPreInstall.Name = "radioButton_EFKModPreInstall";
+            radioButton_EFKModPreInstall.Size = new Size(285, 19);
+            radioButton_EFKModPreInstall.TabIndex = 1;
+            radioButton_EFKModPreInstall.TabStop = true;
+            radioButton_EFKModPreInstall.Text = "Pré Initialisation MOD  Escape From Knox County";
+            radioButton_EFKModPreInstall.UseVisualStyleBackColor = true;
+            radioButton_EFKModPreInstall.CheckedChanged += radioButton_EFKModPreInstall_CheckedChanged;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Ressources.EFK_Ressources.performance;
+            pictureBox1.Location = new Point(16, 22);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(53, 53);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage_EFKTab);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(30, 398);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(635, 251);
+            tabControl1.TabIndex = 8;
+            // 
+            // tabPage_EFKTab
+            // 
+            tabPage_EFKTab.BackColor = SystemColors.Control;
+            tabPage_EFKTab.Controls.Add(richTextBox_Log);
+            tabPage_EFKTab.Location = new Point(4, 24);
+            tabPage_EFKTab.Name = "tabPage_EFKTab";
+            tabPage_EFKTab.Padding = new Padding(3);
+            tabPage_EFKTab.Size = new Size(627, 223);
+            tabPage_EFKTab.TabIndex = 0;
+            tabPage_EFKTab.Text = "Journal";
+            // 
+            // richTextBox_Log
+            // 
+            richTextBox_Log.Location = new Point(6, 7);
+            richTextBox_Log.Name = "richTextBox_Log";
+            richTextBox_Log.Size = new Size(614, 210);
+            richTextBox_Log.TabIndex = 0;
+            richTextBox_Log.Text = "";
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(627, 223);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "A Propos";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
             // FenetrePrincipale
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(691, 704);
+            ClientSize = new Size(691, 789);
+            Controls.Add(tabControl1);
+            Controls.Add(groupBox_PreInitEFK);
             Controls.Add(groupBox_Repertoire);
             Controls.Add(checkBox_DebugMode);
             Controls.Add(button_LaunchPZ);
@@ -196,6 +322,12 @@
             ((System.ComponentModel.ISupportInitialize)picture_Steam).EndInit();
             groupBox_Repertoire.ResumeLayout(false);
             groupBox_Repertoire.PerformLayout();
+            groupBox_PreInitEFK.ResumeLayout(false);
+            groupBox_PreInitEFK.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            tabControl1.ResumeLayout(false);
+            tabPage_EFKTab.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -215,5 +347,15 @@
         private Label label_ProfilPZ;
         private Button button_locateSaveDiR;
         private FolderBrowserDialog folderBrowserDialog1;
+        private GroupBox groupBox_PreInitEFK;
+        private PictureBox pictureBox1;
+        private RadioButton radioButton_EFKModPreInstall;
+        private RadioButton radioButton_NoModif;
+        private RichTextBox richTextBox_PreActivationTip;
+        private PictureBox pictureBox2;
+        private TabControl tabControl1;
+        private TabPage tabPage_EFKTab;
+        private RichTextBox richTextBox_Log;
+        private TabPage tabPage2;
     }
 }
