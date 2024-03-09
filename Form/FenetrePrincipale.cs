@@ -21,6 +21,7 @@ namespace EFKLauncher
         {
             CheckForIllegalCrossThreadCalls = false;
             // Gestion Maj Parametre sur Interface
+
             // Profil
             textBox_ProfilPZ.Text = Config.readConfig("profil");
             if (!Directory.Exists(textBox_ProfilPZ.Text))
@@ -98,18 +99,25 @@ namespace EFKLauncher
         {
 
             string jsonFilePath = textBox_ProfilPZ.Text + @"\Sandbox Presets\WIPEMAP.json";
-            if (File.Exists(jsonFilePath)) { 
-            string json = File.ReadAllText(jsonFilePath);
+            if (File.Exists(jsonFilePath))
+            {
+                Core.WriteLog(richTextBox_Log, "AUTO WIPEMAP Activated");
+                string json = File.ReadAllText(jsonFilePath);
 
-            // Désérialisation en utilisant System.Text.Json
-            var jsonDocument = JsonDocument.Parse(json);
-            var root = jsonDocument.RootElement;
-            Core.WriteLog(richTextBox_Log, "tictoc");
+                // Désérialisation en utilisant System.Text.Json
+                var jsonDocument = JsonDocument.Parse(json);
+                var root = jsonDocument.RootElement;
 
-            // Accédez aux propriétés individuelles, par exemple :
-            var saveDir = root.GetProperty("SaveGameDir");
-            Core.WriteLog(richTextBox_Log, $"{saveDir}"); 
+                // récupere donnée JSON "SaveGameDir" :
+                string saveDir = root.GetProperty("SaveGameDir").ToString();
+                textBox_SaveDir.Text = saveDir;
+                Core.WriteLog(richTextBox_Log, $"set SavegameDir >> {saveDir}");
+                Core.WipeMap(textBox_ProfilPZ, textBox_SaveDir, richTextBox_Log);
+                File.Delete(jsonFilePath);
+                Core.WriteLog(richTextBox_Log, "WIPEMAP.json file deleted");
+                Core.WriteLog(richTextBox_Log, "AUTO WIPEMAP Done");
             }
+
         }
 
         private void label_CollectionSteam_Click(object sender, EventArgs e)
@@ -188,23 +196,9 @@ namespace EFKLauncher
         private void button_WIPEMAP_Click(object sender, EventArgs e)
         {
             Core.PlaySound(@"sounds\clic.wav");
-            Core.WriteLog(richTextBox_Log, "WIPE MAP : Starting WIPEMAP");
 
-            string fileName = @"Config\delfile\fichiers.txt";
-            IEnumerable<string> lines = File.ReadLines(fileName);
+            Core.WipeMap(textBox_ProfilPZ, textBox_SaveDir, richTextBox_Log);
 
-            foreach (string line in lines)
-            {
-                if (File.Exists(textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text + "\\" + line))
-                {
-                    Core.delFile(
-                        richTextBox_Log,
-                        textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text,
-                        line);
-                }
-            }
-            Core.WriteLog(richTextBox_Log, "WIPE MAP : Ending WIPEMAP");
-            Core.PlaySound(@"sounds\whoosh.wav");
         }
 
 

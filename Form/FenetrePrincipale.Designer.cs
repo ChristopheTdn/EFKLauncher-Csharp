@@ -475,7 +475,6 @@
         private GroupBox groupBox_Repertoire;
         private TextBox textBox_SaveDir;
         private Label label_SaveGame;
-        private TextBox textBox_ProfilPZ;
         private Label label_ProfilPZ;
         private Button button_locateSaveDiR;
         private FolderBrowserDialog folderBrowserDialog1;
@@ -498,5 +497,6 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        public TextBox textBox_ProfilPZ;
     }
 }

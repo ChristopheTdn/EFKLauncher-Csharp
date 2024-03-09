@@ -102,7 +102,7 @@ namespace EFKLauncher.Classes
         static public void WriteLog(RichTextBox textbox, string source)
         {
             textbox.SelectionFont = new Font(textbox.Font, FontStyle.Bold);
-            textbox.AppendText(DateTime.Now.ToString("yy-MM-dd HH:mm:ss") + " :");
+            textbox.AppendText(DateTime.Now.ToString("yy-MM-dd HH:mm:ss") + " : ");
             textbox.SelectionFont = new Font(textbox.Font, FontStyle.Regular);
             textbox.AppendText(source + Environment.NewLine);
             textbox.ScrollToCaret();
@@ -113,6 +113,29 @@ namespace EFKLauncher.Classes
             string versionString = Environment.GetEnvironmentVariable("ClickOnce_CurrentVersion") ?? "0.0.0.0";
             //Version version = Version.Parse(versionString);
             return "v. " + versionString;
+        }
+
+        static public void WipeMap(TextBox textBox_ProfilPZ,
+            TextBox textBox_SaveDir,
+            RichTextBox richTextBox_Log)
+        {
+            Core.WriteLog(richTextBox_Log, "WIPE MAP : Starting WIPEMAP");
+            string fileName = @"Config\delfile\fichiers.txt";
+            IEnumerable<string> lines = File.ReadLines(fileName);
+
+            foreach (string line in lines)
+            {
+                if (File.Exists(textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text + "\\" + line))
+                {
+                    Core.delFile(
+                        richTextBox_Log,
+                        textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text,
+                        line);
+                }
+            }
+
+            Core.WriteLog(richTextBox_Log, "WIPE MAP : Ending WIPEMAP");
+            Core.PlaySound(@"sounds\whoosh.wav");
         }
         static public void PlaySound(string son)
         {
