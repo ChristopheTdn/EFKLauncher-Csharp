@@ -43,6 +43,7 @@
             label_ProfilPZ = new Label();
             folderBrowserDialog1 = new FolderBrowserDialog();
             groupBox_PreInitEFK = new GroupBox();
+            label3 = new Label();
             richTextBox_PreActivationTip = new RichTextBox();
             pictureBox2 = new PictureBox();
             radioButton_NoModif = new RadioButton();
@@ -96,6 +97,7 @@
             // label_CollectionSteam
             // 
             label_CollectionSteam.AutoSize = true;
+            label_CollectionSteam.Cursor = Cursors.Hand;
             label_CollectionSteam.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label_CollectionSteam.ForeColor = SystemColors.HotTrack;
             label_CollectionSteam.Location = new Point(86, 133);
@@ -207,6 +209,7 @@
             // 
             // groupBox_PreInitEFK
             // 
+            groupBox_PreInitEFK.Controls.Add(label3);
             groupBox_PreInitEFK.Controls.Add(richTextBox_PreActivationTip);
             groupBox_PreInitEFK.Controls.Add(pictureBox2);
             groupBox_PreInitEFK.Controls.Add(radioButton_NoModif);
@@ -217,7 +220,18 @@
             groupBox_PreInitEFK.Size = new Size(598, 78);
             groupBox_PreInitEFK.TabIndex = 7;
             groupBox_PreInitEFK.TabStop = false;
-            groupBox_PreInitEFK.Text = "Pré Activation MOD EFK";
+            groupBox_PreInitEFK.Text = "Pre Select EFK in PZ";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Brown;
+            label3.Location = new Point(304, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(88, 15);
+            label3.TabIndex = 17;
+            label3.Text = "IMPORTANT  : ";
             // 
             // richTextBox_PreActivationTip
             // 
@@ -225,11 +239,11 @@
             richTextBox_PreActivationTip.BorderStyle = BorderStyle.None;
             richTextBox_PreActivationTip.ForeColor = SystemColors.WindowText;
             richTextBox_PreActivationTip.ImeMode = ImeMode.On;
-            richTextBox_PreActivationTip.Location = new Point(304, 15);
+            richTextBox_PreActivationTip.Location = new Point(300, 37);
             richTextBox_PreActivationTip.Name = "richTextBox_PreActivationTip";
-            richTextBox_PreActivationTip.Size = new Size(288, 57);
+            richTextBox_PreActivationTip.Size = new Size(288, 32);
             richTextBox_PreActivationTip.TabIndex = 3;
-            richTextBox_PreActivationTip.Text = "IMPORTANT :\nChoose \"no mods inits\" ONLY  if you want to activate manually MODS (no support for this option)";
+            richTextBox_PreActivationTip.Text = "Choose \"no mods inits\" ONLY  if you want to activate manually MODS (no support for this choice).";
             // 
             // pictureBox2
             // 
@@ -340,6 +354,7 @@
             // 
             // pictureBox_TwitchLogo
             // 
+            pictureBox_TwitchLogo.Cursor = Cursors.Hand;
             pictureBox_TwitchLogo.Image = Ressources.EFK_Ressources.Twitch_logo;
             pictureBox_TwitchLogo.Location = new Point(119, 99);
             pictureBox_TwitchLogo.Name = "pictureBox_TwitchLogo";
@@ -351,6 +366,7 @@
             // 
             // pictureBox_YoutubeLogo
             // 
+            pictureBox_YoutubeLogo.Cursor = Cursors.Hand;
             pictureBox_YoutubeLogo.Image = Ressources.EFK_Ressources.youtube;
             pictureBox_YoutubeLogo.Location = new Point(147, 99);
             pictureBox_YoutubeLogo.Name = "pictureBox_YoutubeLogo";
@@ -362,6 +378,7 @@
             // 
             // pictureBox_DiscordLogo
             // 
+            pictureBox_DiscordLogo.Cursor = Cursors.Hand;
             pictureBox_DiscordLogo.Image = Ressources.EFK_Ressources.discord;
             pictureBox_DiscordLogo.Location = new Point(185, 99);
             pictureBox_DiscordLogo.Name = "pictureBox_DiscordLogo";
@@ -479,5 +496,6 @@
         private Label label_VersionProgramme;
         private Label label1;
         private Label label2;
+        private Label label3;
     }
 }

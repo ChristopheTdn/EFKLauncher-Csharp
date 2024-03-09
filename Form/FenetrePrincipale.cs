@@ -86,11 +86,13 @@ namespace EFKLauncher
         }
         private void label_CollectionSteam_Click(object sender, EventArgs e)
         {
+            Core.PlaySound(@"sounds\clic.wav");
             Core.RunCmd("steam://openurl/https://steamcommunity.com/sharedfiles/filedetails/?id=3048855836");
         }
 
         private void button_LaunchPZ_Click(object sender, EventArgs e)
         {
+            Core.PlaySound(@"sounds\clic.wav");
             Core.WriteLog(richTextBox_Log, "LAUNCH-PZ : init Launch PZ ");
             if (this.radioButton_EFKModPreInstall.Checked)
             {
@@ -105,6 +107,7 @@ namespace EFKLauncher
 
         private void button_locateSaveDiR_Click(object sender, EventArgs e)
         {
+            Core.PlaySound(@"sounds\clic.wav");
             var folderDialog = new FolderBrowserDialog();
             folderDialog.Description = "Choose a Save Game Directory for WipeMap Process.";
             folderDialog.SelectedPath = textBox_ProfilPZ.Text + @"\Saves\Sandbox\"; ;
@@ -119,6 +122,7 @@ namespace EFKLauncher
 
         private void checkBox_DebugMode_CheckedChanged(object sender, EventArgs e)
         {
+            Core.PlaySound(@"sounds\clic.wav");
             if (checkBox_DebugMode.Checked)
             {
                 Config.setConfig("DebugMode", "true");
@@ -131,6 +135,7 @@ namespace EFKLauncher
 
         private void radioButton_EFKModPreInstall_CheckedChanged(object sender, EventArgs e)
         {
+            Core.PlaySound(@"sounds\clic.wav");
             if (this.radioButton_EFKModPreInstall.Checked == true)
             {
                 Config.setConfig("PreIniEFK", "true");
@@ -139,6 +144,7 @@ namespace EFKLauncher
 
         private void radioButton_NoModif_CheckedChanged(object sender, EventArgs e)
         {
+            Core.PlaySound(@"sounds\clic.wav");
             if (this.radioButton_NoModif.Checked == true)
             {
                 Config.setConfig("PreIniEFK", "false");
@@ -147,11 +153,13 @@ namespace EFKLauncher
 
         private void checkBox_ActivateWipeMap_CheckedChanged(object sender, EventArgs e)
         {
+            Core.PlaySound(@"sounds\clic.wav");
             this.button_WIPEMAP.Enabled = checkBox_ActivateWipeMap.Checked;
         }
 
         private void button_WIPEMAP_Click(object sender, EventArgs e)
         {
+            Core.PlaySound(@"sounds\clic.wav");
             Core.WriteLog(richTextBox_Log, "WIPE MAP : Starting WIPEMAP");
 
             string fileName = @"Config\delfile\fichiers.txt";
@@ -168,7 +176,9 @@ namespace EFKLauncher
                 }
             }
             Core.WriteLog(richTextBox_Log, "WIPE MAP : Ending WIPEMAP");
+            Core.PlaySound(@"sounds\whoosh.wav");
         }
+
 
         private void textBox_SaveDir_TextChanged(object sender, EventArgs e)
         {
@@ -184,17 +194,20 @@ namespace EFKLauncher
 
         private void pictureBox_TwitchLogo_Click(object sender, EventArgs e)
         {
+            Core.PlaySound(@"sounds\clic.wav");
             Core.RunCmd("https://www.twitch.tv/tancredterror");
 
         }
 
         private void pictureBox_YoutubeLogo_Click(object sender, EventArgs e)
         {
+            Core.PlaySound(@"sounds\clic.wav");
             Core.RunCmd("https://www.youtube.com/@TancredTerror");
         }
 
         private void pictureBox_DiscordLogo_Click(object sender, EventArgs e)
         {
+            Core.PlaySound(@"sounds\clic.wav");
             Core.RunCmd("https://discord.com/invite/rbd36ERXyu");
         }
     }

@@ -113,7 +113,12 @@ namespace EFKLauncher.Classes
         {
             string versionString = Environment.GetEnvironmentVariable("ClickOnce_CurrentVersion") ?? "0.0.0.0";
             //Version version = Version.Parse(versionString);
-            return "v. "+versionString;
+            return "v. " + versionString;
         }
-    }   
+        static public void PlaySound(string son)
+        {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(son);
+            player.Play();
+        }
+    }
 }

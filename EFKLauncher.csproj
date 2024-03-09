@@ -54,6 +54,8 @@
     <None Remove="Ressources\gfx\update.png" />
     <None Remove="Ressources\gfx\valide.png" />
     <None Remove="Ressources\gfx\youtube.png" />
+    <None Remove="sounds\clic.wav" />
+    <None Remove="sounds\whoosh.wav" />
   </ItemGroup>
 
   <ItemGroup>
@@ -74,6 +76,12 @@
 
   <ItemGroup>
     <Content Include="Config\delfile\fichiers.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\clic.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\whoosh.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
