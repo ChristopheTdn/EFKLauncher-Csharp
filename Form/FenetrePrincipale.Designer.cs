@@ -43,7 +43,7 @@
             label_ProfilPZ = new Label();
             folderBrowserDialog1 = new FolderBrowserDialog();
             groupBox_PreInitEFK = new GroupBox();
-            label3 = new Label();
+            label_Important = new Label();
             richTextBox_PreActivationTip = new RichTextBox();
             pictureBox2 = new PictureBox();
             radioButton_NoModif = new RadioButton();
@@ -61,6 +61,9 @@
             label_VersionProgramme = new Label();
             label1 = new Label();
             label2 = new Label();
+            pictureBox3 = new PictureBox();
+            label_Important_2 = new Label();
+            richTextBox_WIPEMAP_TIP = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox_EFKLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picture_Steam).BeginInit();
             groupBox_Repertoire.SuspendLayout();
@@ -72,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox_TwitchLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_YoutubeLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_DiscordLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // pictureBox_EFKLogo
@@ -124,9 +128,9 @@
             button_LaunchPZ.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button_LaunchPZ.Image = Ressources.EFK_Ressources.pz;
             button_LaunchPZ.ImageAlign = ContentAlignment.MiddleLeft;
-            button_LaunchPZ.Location = new Point(460, 12);
+            button_LaunchPZ.Location = new Point(458, 22);
             button_LaunchPZ.Name = "button_LaunchPZ";
-            button_LaunchPZ.Size = new Size(148, 50);
+            button_LaunchPZ.Size = new Size(151, 49);
             button_LaunchPZ.TabIndex = 4;
             button_LaunchPZ.Text = "Launch PZ";
             button_LaunchPZ.TextAlign = ContentAlignment.MiddleRight;
@@ -136,7 +140,7 @@
             // checkBox_DebugMode
             // 
             checkBox_DebugMode.AutoSize = true;
-            checkBox_DebugMode.Location = new Point(482, 68);
+            checkBox_DebugMode.Location = new Point(493, 77);
             checkBox_DebugMode.Name = "checkBox_DebugMode";
             checkBox_DebugMode.Size = new Size(95, 19);
             checkBox_DebugMode.TabIndex = 5;
@@ -160,7 +164,7 @@
             // 
             // button_locateSaveDiR
             // 
-            button_locateSaveDiR.Location = new Point(471, 60);
+            button_locateSaveDiR.Location = new Point(482, 61);
             button_locateSaveDiR.Name = "button_locateSaveDiR";
             button_locateSaveDiR.Size = new Size(84, 23);
             button_locateSaveDiR.TabIndex = 4;
@@ -174,7 +178,7 @@
             textBox_SaveDir.Location = new Point(96, 61);
             textBox_SaveDir.Name = "textBox_SaveDir";
             textBox_SaveDir.ReadOnly = true;
-            textBox_SaveDir.Size = new Size(351, 23);
+            textBox_SaveDir.Size = new Size(380, 23);
             textBox_SaveDir.TabIndex = 3;
             textBox_SaveDir.TextChanged += textBox_SaveDir_TextChanged;
             // 
@@ -194,7 +198,7 @@
             textBox_ProfilPZ.Location = new Point(96, 26);
             textBox_ProfilPZ.Name = "textBox_ProfilPZ";
             textBox_ProfilPZ.ReadOnly = true;
-            textBox_ProfilPZ.Size = new Size(351, 23);
+            textBox_ProfilPZ.Size = new Size(470, 23);
             textBox_ProfilPZ.TabIndex = 1;
             // 
             // label_ProfilPZ
@@ -209,7 +213,7 @@
             // 
             // groupBox_PreInitEFK
             // 
-            groupBox_PreInitEFK.Controls.Add(label3);
+            groupBox_PreInitEFK.Controls.Add(label_Important);
             groupBox_PreInitEFK.Controls.Add(richTextBox_PreActivationTip);
             groupBox_PreInitEFK.Controls.Add(pictureBox2);
             groupBox_PreInitEFK.Controls.Add(radioButton_NoModif);
@@ -222,16 +226,16 @@
             groupBox_PreInitEFK.TabStop = false;
             groupBox_PreInitEFK.Text = "Pre Select EFK in PZ";
             // 
-            // label3
+            // label_Important
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Brown;
-            label3.Location = new Point(304, 19);
-            label3.Name = "label3";
-            label3.Size = new Size(88, 15);
-            label3.TabIndex = 17;
-            label3.Text = "IMPORTANT  : ";
+            label_Important.AutoSize = true;
+            label_Important.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Important.ForeColor = Color.Brown;
+            label_Important.Location = new Point(304, 19);
+            label_Important.Name = "label_Important";
+            label_Important.Size = new Size(88, 15);
+            label_Important.TabIndex = 17;
+            label_Important.Text = "IMPORTANT  : ";
             // 
             // richTextBox_PreActivationTip
             // 
@@ -331,7 +335,7 @@
             // button_WIPEMAP
             // 
             button_WIPEMAP.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button_WIPEMAP.Location = new Point(60, 634);
+            button_WIPEMAP.Location = new Point(60, 638);
             button_WIPEMAP.Name = "button_WIPEMAP";
             button_WIPEMAP.Size = new Size(201, 51);
             button_WIPEMAP.TabIndex = 9;
@@ -420,11 +424,47 @@
             label2.TabIndex = 16;
             label2.Text = "Subscribing to this collection is a must to play EFK";
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Ressources.EFK_Ressources.accolade;
+            pictureBox3.Location = new Point(296, 638);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(13, 76);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 18;
+            pictureBox3.TabStop = false;
+            // 
+            // label_Important_2
+            // 
+            label_Important_2.AutoSize = true;
+            label_Important_2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_Important_2.ForeColor = Color.Brown;
+            label_Important_2.Location = new Point(315, 638);
+            label_Important_2.Name = "label_Important_2";
+            label_Important_2.Size = new Size(88, 15);
+            label_Important_2.TabIndex = 18;
+            label_Important_2.Text = "IMPORTANT  : ";
+            // 
+            // richTextBox_WIPEMAP_TIP
+            // 
+            richTextBox_WIPEMAP_TIP.BackColor = SystemColors.Control;
+            richTextBox_WIPEMAP_TIP.BorderStyle = BorderStyle.None;
+            richTextBox_WIPEMAP_TIP.ForeColor = SystemColors.WindowText;
+            richTextBox_WIPEMAP_TIP.ImeMode = ImeMode.On;
+            richTextBox_WIPEMAP_TIP.Location = new Point(315, 656);
+            richTextBox_WIPEMAP_TIP.Name = "richTextBox_WIPEMAP_TIP";
+            richTextBox_WIPEMAP_TIP.Size = new Size(273, 58);
+            richTextBox_WIPEMAP_TIP.TabIndex = 3;
+            richTextBox_WIPEMAP_TIP.Text = "- Between 2 raids\n- Player in the hideout.\n- Main Menu or Quit PZ";
+            // 
             // FenetrePrincipale
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(620, 726);
+            Controls.Add(label_Important_2);
+            Controls.Add(richTextBox_WIPEMAP_TIP);
+            Controls.Add(pictureBox3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox_EFKLogo);
@@ -460,6 +500,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox_TwitchLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_YoutubeLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_DiscordLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -496,7 +537,10 @@
         private Label label_VersionProgramme;
         private Label label1;
         private Label label2;
-        private Label label3;
+        private Label label_Important;
         public TextBox textBox_ProfilPZ;
+        private PictureBox pictureBox3;
+        private Label label_Important_2;
+        private RichTextBox richTextBox_WIPEMAP_TIP;
     }
 }
