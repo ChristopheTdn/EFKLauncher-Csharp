@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Windows.Forms;
 using System.IO;
 using Microsoft.Win32;
+using System.Text.Json;
 
 namespace EFKLauncher
 {
@@ -18,34 +19,37 @@ namespace EFKLauncher
         }
         private void FenetrePrincipale_Load(object sender, EventArgs e)
         {
+            CheckForIllegalCrossThreadCalls = false;
             // Gestion Maj Parametre sur Interface
-            // Savedir
-            this.textBox_SaveDir.Text = Config.readConfig("SaveDir");
-            if (!Directory.Exists(this.textBox_SaveDir.Text))
-            {
-                this.textBox_SaveDir.Text = "";
-                Config.setConfig("SaveDir", "");
-            }
-            this.checkBox_ActivateWipeMap.Checked = false;
-            this.button_WIPEMAP.Enabled = false;
-            this.checkBox_ActivateWipeMap.Enabled = Directory.Exists(this.textBox_SaveDir.Text);
-
-
-
-            Core.WriteLog(richTextBox_Log, "Setting Savedir");
             // Profil
-            this.textBox_ProfilPZ.Text = Config.readConfig("profil");
-            if (!Directory.Exists(this.textBox_ProfilPZ.Text))
+            textBox_ProfilPZ.Text = Config.readConfig("profil");
+            if (!Directory.Exists(textBox_ProfilPZ.Text))
             {
-                this.textBox_ProfilPZ.Text = Core.getProfilPZDirectory();
-                Config.setConfig("Profil", this.textBox_ProfilPZ.Text);
+                textBox_ProfilPZ.Text = Core.getProfilPZDirectory();
+                Config.setConfig("Profil", textBox_ProfilPZ.Text);
             }
             Core.WriteLog(richTextBox_Log, "Setting Pz Profil Directory");
+
+
+            // Savedir
+            checkBox_ActivateWipeMap.Checked = false;
+            checkBox_ActivateWipeMap.Enabled = false;
+            textBox_SaveDir.Text = Config.readConfig("SaveDir");
+            if (!Directory.Exists(textBox_ProfilPZ.Text + @"\Saves\Sandbox\"+ textBox_SaveDir.Text))
+            {
+                textBox_SaveDir.Text = "";
+                Config.setConfig("SaveDir", "");
+                checkBox_ActivateWipeMap.Enabled = false;
+            }
+
+            button_WIPEMAP.Enabled = false;
+            Core.WriteLog(richTextBox_Log, "Setting Savedir");
+
 
             //DebugMode
             if (Config.readConfig("DebugMode") == "true")
             {
-                this.checkBox_DebugMode.Checked = true;
+                checkBox_DebugMode.Checked = true;
             }
             Core.WriteLog(richTextBox_Log, "Setting Debug Mode CheckBox");
             //SteamExe
@@ -55,13 +59,13 @@ namespace EFKLauncher
             //Copyfile
 
             Core.copyFile(@"Config\difficulty\EFK Easy.cfg",
-                            this.textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK Easy.cfg"
+                            textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK Easy.cfg"
                          );
             Core.copyFile(@"Config\difficulty\EFK Hard.cfg",
-                            this.textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK Hard.cfg"
+                            textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK Hard.cfg"
                          );
             Core.copyFile(@"Config\difficulty\EFK STD.cfg",
-                            this.textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK STD.cfg"
+                             textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK STD.cfg"
                          );
             Core.WriteLog(richTextBox_Log, "Install SandBox Presets : EFK Easy.cfg, EFK Hard.cfg, EFK STD.cfg");
 
@@ -71,19 +75,43 @@ namespace EFKLauncher
                 Config.readConfig("PreIniEFK") == "true"
                 )
             {
-                this.radioButton_EFKModPreInstall.Checked = true;
+                 
+                radioButton_EFKModPreInstall.Checked = true;
                 Config.setConfig("PreIniEFK", "true");
             }
             else
             {
-                this.radioButton_NoModif.Checked = true;
+                 radioButton_NoModif.Checked = true;
             }
 
             // version programme
-            this.label_VersionProgramme.Text = Core.AfficheVersionProgramme();
+             label_VersionProgramme.Text = Core.AfficheVersionProgramme();
 
-
+            // Init Timer
+            System.Timers.Timer temporisation = new System.Timers.Timer(10000);
+            temporisation.Enabled = true;
+            temporisation.Elapsed += new System.Timers.ElapsedEventHandler(ScanAutoWipeMap);
+            temporisation.AutoReset = true;
         }
+
+        private void ScanAutoWipeMap(object source, System.Timers.ElapsedEventArgs e)
+        {
+
+            string jsonFilePath = textBox_ProfilPZ.Text + @"\Sandbox Presets\WIPEMAP.json";
+            if (File.Exists(jsonFilePath)) { 
+            string json = File.ReadAllText(jsonFilePath);
+
+            // Désérialisation en utilisant System.Text.Json
+            var jsonDocument = JsonDocument.Parse(json);
+            var root = jsonDocument.RootElement;
+            Core.WriteLog(richTextBox_Log, "tictoc");
+
+            // Accédez aux propriétés individuelles, par exemple :
+            var saveDir = root.GetProperty("SaveGameDir");
+            Core.WriteLog(richTextBox_Log, $"{saveDir}"); 
+            }
+        }
+
         private void label_CollectionSteam_Click(object sender, EventArgs e)
         {
             Core.PlaySound(@"sounds\clic.wav");
@@ -94,10 +122,10 @@ namespace EFKLauncher
         {
             Core.PlaySound(@"sounds\clic.wav");
             Core.WriteLog(richTextBox_Log, "LAUNCH-PZ : init Launch PZ ");
-            if (this.radioButton_EFKModPreInstall.Checked)
+            if ( radioButton_EFKModPreInstall.Checked)
             {
                 Core.copyFile(@"Config\EFK\AdvancedEFK_default.txt",
-                              this.textBox_ProfilPZ.Text + @"\mods\default.txt");
+                               textBox_ProfilPZ.Text + @"\mods\default.txt");
                 Core.WriteLog(richTextBox_Log, "LAUNCH-PZ : update \"\\mods\\default.txt\" with EFK Mod list");
             }
             Core.WriteLog(richTextBox_Log, "LAUNCH-PZ : Debug mode >" + checkBox_DebugMode.Checked.ToString());
@@ -115,7 +143,7 @@ namespace EFKLauncher
 
             if (result == DialogResult.OK)
             {
-                textBox_SaveDir.Text = folderDialog.SelectedPath;
+                textBox_SaveDir.Text = Path.GetFileName(folderDialog.SelectedPath);
                 Config.setConfig("SaveDir", textBox_SaveDir.Text);
             }
         }
@@ -136,7 +164,7 @@ namespace EFKLauncher
         private void radioButton_EFKModPreInstall_CheckedChanged(object sender, EventArgs e)
         {
             Core.PlaySound(@"sounds\clic.wav");
-            if (this.radioButton_EFKModPreInstall.Checked == true)
+            if (radioButton_EFKModPreInstall.Checked == true)
             {
                 Config.setConfig("PreIniEFK", "true");
             }
@@ -145,7 +173,7 @@ namespace EFKLauncher
         private void radioButton_NoModif_CheckedChanged(object sender, EventArgs e)
         {
             Core.PlaySound(@"sounds\clic.wav");
-            if (this.radioButton_NoModif.Checked == true)
+            if ( radioButton_NoModif.Checked == true)
             {
                 Config.setConfig("PreIniEFK", "false");
             }
@@ -154,7 +182,7 @@ namespace EFKLauncher
         private void checkBox_ActivateWipeMap_CheckedChanged(object sender, EventArgs e)
         {
             Core.PlaySound(@"sounds\clic.wav");
-            this.button_WIPEMAP.Enabled = checkBox_ActivateWipeMap.Checked;
+             button_WIPEMAP.Enabled = checkBox_ActivateWipeMap.Checked;
         }
 
         private void button_WIPEMAP_Click(object sender, EventArgs e)
@@ -167,11 +195,11 @@ namespace EFKLauncher
 
             foreach (string line in lines)
             {
-                if (File.Exists(textBox_SaveDir.Text + "\\" + line))
+                if (File.Exists(textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text + "\\" + line))
                 {
                     Core.delFile(
                         richTextBox_Log,
-                        textBox_SaveDir.Text,
+                        textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text,
                         line);
                 }
             }
@@ -181,16 +209,17 @@ namespace EFKLauncher
 
 
         private void textBox_SaveDir_TextChanged(object sender, EventArgs e)
-        {
-            if (!Directory.Exists(this.textBox_SaveDir.Text))
+        {     
+            checkBox_ActivateWipeMap.Checked = false;
+            checkBox_ActivateWipeMap.Enabled = true;
+            if (!Directory.Exists(textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text))
             {
-                this.textBox_SaveDir.Text = "";
+                 textBox_SaveDir.Text = "";
                 Config.setConfig("SaveDir", "");
+                checkBox_ActivateWipeMap.Enabled = false;
             }
-            this.checkBox_ActivateWipeMap.Checked = false;
-            this.button_WIPEMAP.Enabled = false;
-            this.checkBox_ActivateWipeMap.Enabled = Directory.Exists(this.textBox_SaveDir.Text);
-        }
+
+             button_WIPEMAP.Enabled = false;        }
 
         private void pictureBox_TwitchLogo_Click(object sender, EventArgs e)
         {

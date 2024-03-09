@@ -89,7 +89,6 @@ namespace EFKLauncher.Classes
             {
                 File.Copy(source, dest, true);
             }
-
         }
         static public void delFile(RichTextBox textbox, string saveDir, string file)
         {

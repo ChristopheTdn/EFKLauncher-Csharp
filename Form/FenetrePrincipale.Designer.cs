@@ -342,6 +342,7 @@
             // checkBox_ActivateWipeMap
             // 
             checkBox_ActivateWipeMap.AutoSize = true;
+            checkBox_ActivateWipeMap.Enabled = false;
             checkBox_ActivateWipeMap.Image = Ressources.EFK_Ressources.danger;
             checkBox_ActivateWipeMap.Location = new Point(60, 691);
             checkBox_ActivateWipeMap.Name = "checkBox_ActivateWipeMap";
