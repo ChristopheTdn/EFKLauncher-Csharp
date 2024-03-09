@@ -79,6 +79,9 @@ namespace EFKLauncher
                 this.radioButton_NoModif.Checked = true;
             }
 
+            // version programme
+            this.label_VersionProgramme.Text = Core.AfficheVersionProgramme();
+
 
         }
         private void label_CollectionSteam_Click(object sender, EventArgs e)

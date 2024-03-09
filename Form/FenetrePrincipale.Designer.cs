@@ -57,6 +57,9 @@
             pictureBox_TwitchLogo = new PictureBox();
             pictureBox_YoutubeLogo = new PictureBox();
             pictureBox_DiscordLogo = new PictureBox();
+            label_VersionProgramme = new Label();
+            label1 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox_EFKLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picture_Steam).BeginInit();
             groupBox_Repertoire.SuspendLayout();
@@ -73,7 +76,7 @@
             // pictureBox_EFKLogo
             // 
             pictureBox_EFKLogo.Image = Ressources.EFK_Ressources.EFK;
-            pictureBox_EFKLogo.Location = new Point(6, 8);
+            pictureBox_EFKLogo.Location = new Point(11, 8);
             pictureBox_EFKLogo.Name = "pictureBox_EFKLogo";
             pictureBox_EFKLogo.Size = new Size(102, 97);
             pictureBox_EFKLogo.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -83,29 +86,30 @@
             // label_TitleEFKC
             // 
             label_TitleEFKC.AutoSize = true;
-            label_TitleEFKC.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_TitleEFKC.Location = new Point(114, -1);
+            label_TitleEFKC.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_TitleEFKC.Location = new Point(107, 2);
             label_TitleEFKC.Name = "label_TitleEFKC";
-            label_TitleEFKC.Size = new Size(250, 90);
+            label_TitleEFKC.Size = new Size(275, 94);
             label_TitleEFKC.TabIndex = 1;
             label_TitleEFKC.Text = "ESCAPE FROM\r\nKNOX COUNTY";
             // 
             // label_CollectionSteam
             // 
             label_CollectionSteam.AutoSize = true;
-            label_CollectionSteam.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label_CollectionSteam.Location = new Point(105, 129);
+            label_CollectionSteam.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label_CollectionSteam.ForeColor = SystemColors.HotTrack;
+            label_CollectionSteam.Location = new Point(86, 133);
             label_CollectionSteam.Name = "label_CollectionSteam";
-            label_CollectionSteam.Size = new Size(404, 25);
+            label_CollectionSteam.Size = new Size(485, 25);
             label_CollectionSteam.TabIndex = 2;
-            label_CollectionSteam.Text = "ESCAPE FROM KNOX COUNTY Steam Collection";
+            label_CollectionSteam.Text = "ESCAPE FROM KNOX COUNTY Steam Collection (link)";
             label_CollectionSteam.TextAlign = ContentAlignment.MiddleCenter;
             label_CollectionSteam.Click += label_CollectionSteam_Click;
             // 
             // picture_Steam
             // 
             picture_Steam.Image = Ressources.EFK_Ressources.Steam_Icon;
-            picture_Steam.Location = new Point(35, 111);
+            picture_Steam.Location = new Point(16, 111);
             picture_Steam.Name = "picture_Steam";
             picture_Steam.Size = new Size(64, 64);
             picture_Steam.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -118,9 +122,9 @@
             button_LaunchPZ.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button_LaunchPZ.Image = Ressources.EFK_Ressources.pz;
             button_LaunchPZ.ImageAlign = ContentAlignment.MiddleLeft;
-            button_LaunchPZ.Location = new Point(527, 23);
+            button_LaunchPZ.Location = new Point(460, 12);
             button_LaunchPZ.Name = "button_LaunchPZ";
-            button_LaunchPZ.Size = new Size(155, 50);
+            button_LaunchPZ.Size = new Size(148, 50);
             button_LaunchPZ.TabIndex = 4;
             button_LaunchPZ.Text = "Launch PZ";
             button_LaunchPZ.TextAlign = ContentAlignment.MiddleRight;
@@ -130,7 +134,7 @@
             // checkBox_DebugMode
             // 
             checkBox_DebugMode.AutoSize = true;
-            checkBox_DebugMode.Location = new Point(559, 79);
+            checkBox_DebugMode.Location = new Point(482, 68);
             checkBox_DebugMode.Name = "checkBox_DebugMode";
             checkBox_DebugMode.Size = new Size(95, 19);
             checkBox_DebugMode.TabIndex = 5;
@@ -145,16 +149,16 @@
             groupBox_Repertoire.Controls.Add(label_SaveGame);
             groupBox_Repertoire.Controls.Add(textBox_ProfilPZ);
             groupBox_Repertoire.Controls.Add(label_ProfilPZ);
-            groupBox_Repertoire.Location = new Point(30, 197);
+            groupBox_Repertoire.Location = new Point(11, 197);
             groupBox_Repertoire.Name = "groupBox_Repertoire";
-            groupBox_Repertoire.Size = new Size(633, 99);
+            groupBox_Repertoire.Size = new Size(598, 99);
             groupBox_Repertoire.TabIndex = 6;
             groupBox_Repertoire.TabStop = false;
             groupBox_Repertoire.Text = "User Directories";
             // 
             // button_locateSaveDiR
             // 
-            button_locateSaveDiR.Location = new Point(540, 61);
+            button_locateSaveDiR.Location = new Point(471, 60);
             button_locateSaveDiR.Name = "button_locateSaveDiR";
             button_locateSaveDiR.Size = new Size(84, 23);
             button_locateSaveDiR.TabIndex = 4;
@@ -168,7 +172,7 @@
             textBox_SaveDir.Location = new Point(96, 61);
             textBox_SaveDir.Name = "textBox_SaveDir";
             textBox_SaveDir.ReadOnly = true;
-            textBox_SaveDir.Size = new Size(404, 23);
+            textBox_SaveDir.Size = new Size(351, 23);
             textBox_SaveDir.TabIndex = 3;
             textBox_SaveDir.TextChanged += textBox_SaveDir_TextChanged;
             // 
@@ -188,7 +192,7 @@
             textBox_ProfilPZ.Location = new Point(96, 26);
             textBox_ProfilPZ.Name = "textBox_ProfilPZ";
             textBox_ProfilPZ.ReadOnly = true;
-            textBox_ProfilPZ.Size = new Size(404, 23);
+            textBox_ProfilPZ.Size = new Size(351, 23);
             textBox_ProfilPZ.TabIndex = 1;
             // 
             // label_ProfilPZ
@@ -208,9 +212,9 @@
             groupBox_PreInitEFK.Controls.Add(radioButton_NoModif);
             groupBox_PreInitEFK.Controls.Add(radioButton_EFKModPreInstall);
             groupBox_PreInitEFK.Controls.Add(pictureBox1);
-            groupBox_PreInitEFK.Location = new Point(30, 305);
+            groupBox_PreInitEFK.Location = new Point(11, 305);
             groupBox_PreInitEFK.Name = "groupBox_PreInitEFK";
-            groupBox_PreInitEFK.Size = new Size(641, 78);
+            groupBox_PreInitEFK.Size = new Size(598, 78);
             groupBox_PreInitEFK.TabIndex = 7;
             groupBox_PreInitEFK.TabStop = false;
             groupBox_PreInitEFK.Text = "Pré Activation MOD EFK";
@@ -223,7 +227,7 @@
             richTextBox_PreActivationTip.ImeMode = ImeMode.On;
             richTextBox_PreActivationTip.Location = new Point(304, 15);
             richTextBox_PreActivationTip.Name = "richTextBox_PreActivationTip";
-            richTextBox_PreActivationTip.Size = new Size(314, 57);
+            richTextBox_PreActivationTip.Size = new Size(288, 57);
             richTextBox_PreActivationTip.TabIndex = 3;
             richTextBox_PreActivationTip.Text = "IMPORTANT :\nChoose \"no mods inits\" ONLY  if you want to activate manually MODS (no support for this option)";
             // 
@@ -275,10 +279,10 @@
             // 
             tabControl1.Controls.Add(tabPage_EFKTab);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(30, 383);
+            tabControl1.Location = new Point(11, 383);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(635, 249);
+            tabControl1.Size = new Size(598, 249);
             tabControl1.TabIndex = 8;
             // 
             // tabPage_EFKTab
@@ -288,7 +292,7 @@
             tabPage_EFKTab.Location = new Point(4, 24);
             tabPage_EFKTab.Name = "tabPage_EFKTab";
             tabPage_EFKTab.Padding = new Padding(3);
-            tabPage_EFKTab.Size = new Size(627, 221);
+            tabPage_EFKTab.Size = new Size(590, 221);
             tabPage_EFKTab.TabIndex = 0;
             tabPage_EFKTab.Text = "Log";
             // 
@@ -296,7 +300,7 @@
             // 
             richTextBox_Log.Location = new Point(6, 7);
             richTextBox_Log.Name = "richTextBox_Log";
-            richTextBox_Log.Size = new Size(614, 210);
+            richTextBox_Log.Size = new Size(578, 208);
             richTextBox_Log.TabIndex = 0;
             richTextBox_Log.Text = "";
             // 
@@ -305,7 +309,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(627, 221);
+            tabPage2.Size = new Size(590, 221);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "About";
             tabPage2.UseVisualStyleBackColor = true;
@@ -313,7 +317,7 @@
             // button_WIPEMAP
             // 
             button_WIPEMAP.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button_WIPEMAP.Location = new Point(79, 634);
+            button_WIPEMAP.Location = new Point(60, 634);
             button_WIPEMAP.Name = "button_WIPEMAP";
             button_WIPEMAP.Size = new Size(201, 51);
             button_WIPEMAP.TabIndex = 9;
@@ -325,7 +329,7 @@
             // 
             checkBox_ActivateWipeMap.AutoSize = true;
             checkBox_ActivateWipeMap.Image = Ressources.EFK_Ressources.danger;
-            checkBox_ActivateWipeMap.Location = new Point(79, 691);
+            checkBox_ActivateWipeMap.Location = new Point(60, 691);
             checkBox_ActivateWipeMap.Name = "checkBox_ActivateWipeMap";
             checkBox_ActivateWipeMap.Size = new Size(201, 35);
             checkBox_ActivateWipeMap.TabIndex = 10;
@@ -337,7 +341,7 @@
             // pictureBox_TwitchLogo
             // 
             pictureBox_TwitchLogo.Image = Ressources.EFK_Ressources.Twitch_logo;
-            pictureBox_TwitchLogo.Location = new Point(126, 92);
+            pictureBox_TwitchLogo.Location = new Point(119, 99);
             pictureBox_TwitchLogo.Name = "pictureBox_TwitchLogo";
             pictureBox_TwitchLogo.Size = new Size(22, 22);
             pictureBox_TwitchLogo.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -348,7 +352,7 @@
             // pictureBox_YoutubeLogo
             // 
             pictureBox_YoutubeLogo.Image = Ressources.EFK_Ressources.youtube;
-            pictureBox_YoutubeLogo.Location = new Point(154, 92);
+            pictureBox_YoutubeLogo.Location = new Point(147, 99);
             pictureBox_YoutubeLogo.Name = "pictureBox_YoutubeLogo";
             pictureBox_YoutubeLogo.Size = new Size(32, 22);
             pictureBox_YoutubeLogo.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -359,7 +363,7 @@
             // pictureBox_DiscordLogo
             // 
             pictureBox_DiscordLogo.Image = Ressources.EFK_Ressources.discord;
-            pictureBox_DiscordLogo.Location = new Point(192, 92);
+            pictureBox_DiscordLogo.Location = new Point(185, 99);
             pictureBox_DiscordLogo.Name = "pictureBox_DiscordLogo";
             pictureBox_DiscordLogo.Size = new Size(32, 22);
             pictureBox_DiscordLogo.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -367,11 +371,46 @@
             pictureBox_DiscordLogo.TabStop = false;
             pictureBox_DiscordLogo.Click += pictureBox_DiscordLogo_Click;
             // 
+            // label_VersionProgramme
+            // 
+            label_VersionProgramme.AutoSize = true;
+            label_VersionProgramme.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_VersionProgramme.Location = new Point(306, 104);
+            label_VersionProgramme.Name = "label_VersionProgramme";
+            label_VersionProgramme.Size = new Size(58, 17);
+            label_VersionProgramme.TabIndex = 14;
+            label_VersionProgramme.Text = "v. 1.0.0.0";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Brown;
+            label1.Location = new Point(91, 158);
+            label1.Name = "label1";
+            label1.Size = new Size(88, 15);
+            label1.TabIndex = 15;
+            label1.Text = "IMPORTANT  : ";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Location = new Point(175, 158);
+            label2.Name = "label2";
+            label2.Size = new Size(265, 15);
+            label2.TabIndex = 16;
+            label2.Text = "Subscribing to this collection is a must to play EFK";
+            // 
             // FenetrePrincipale
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(691, 726);
+            ClientSize = new Size(620, 726);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(pictureBox_EFKLogo);
+            Controls.Add(label_VersionProgramme);
             Controls.Add(pictureBox_DiscordLogo);
             Controls.Add(pictureBox_YoutubeLogo);
             Controls.Add(pictureBox_TwitchLogo);
@@ -385,7 +424,6 @@
             Controls.Add(picture_Steam);
             Controls.Add(label_CollectionSteam);
             Controls.Add(label_TitleEFKC);
-            Controls.Add(pictureBox_EFKLogo);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FenetrePrincipale";
@@ -438,5 +476,8 @@
         private PictureBox pictureBox_TwitchLogo;
         private PictureBox pictureBox_YoutubeLogo;
         private PictureBox pictureBox_DiscordLogo;
+        private Label label_VersionProgramme;
+        private Label label1;
+        private Label label2;
     }
 }

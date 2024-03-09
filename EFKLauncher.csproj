@@ -187,9 +187,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Config\EFK\StandardEFK_default.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Ressources\gfx\EFK.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

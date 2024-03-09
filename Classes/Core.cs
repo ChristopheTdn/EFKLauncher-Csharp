@@ -57,13 +57,13 @@ namespace EFKLauncher.Classes
             }
         }
 
-        static public void launchPZ (RichTextBox textbox, bool debug)
+        static public void launchPZ(RichTextBox textbox, bool debug)
         {
             if (debug)
             {
                 Core.WriteLog(textbox, "LAUNCH-PZ : run command line "
-                     +Config.readConfig("SteamEXE")
-                     +"\"steam://run/108600//-debug/\"");
+                     + Config.readConfig("SteamEXE")
+                     + "\"steam://run/108600//-debug/\"");
                 Process.Start(Config.readConfig("SteamEXE"), "steam://run/108600//-debug/");
             }
             else
@@ -80,33 +80,40 @@ namespace EFKLauncher.Classes
              *   getProfilPZDirectory
              *   Recupere le chemin dur repertoire Zomboid
              */
-            return Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)+@"\Zomboid";
+            return Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Zomboid";
         }
 
         static public void copyFile(string source, string dest)
         {
             if (File.Exists(source))
             {
-                        File.Copy(source, dest, true);
+                File.Copy(source, dest, true);
             }
 
         }
-        static public void delFile(RichTextBox textbox,string saveDir,string file)
+        static public void delFile(RichTextBox textbox, string saveDir, string file)
         {
-            File.Delete(saveDir+"\\"+file);
-            textbox.AppendText("     >"+file +" deleted."+ Environment.NewLine);
+            File.Delete(saveDir + "\\" + file);
+            textbox.AppendText("     >" + file + " deleted." + Environment.NewLine);
             textbox.ScrollToCaret();
 
         }
 
 
-        static public void WriteLog(RichTextBox textbox,  string source)
+        static public void WriteLog(RichTextBox textbox, string source)
         {
             textbox.SelectionFont = new Font(textbox.Font, FontStyle.Bold);
-            textbox.AppendText(DateTime.Now.ToString("yy-MM-dd HH:mm:ss")+" :");
+            textbox.AppendText(DateTime.Now.ToString("yy-MM-dd HH:mm:ss") + " :");
             textbox.SelectionFont = new Font(textbox.Font, FontStyle.Regular);
-            textbox.AppendText(source+Environment.NewLine);
+            textbox.AppendText(source + Environment.NewLine);
             textbox.ScrollToCaret();
         }
-    }
+
+        static public string AfficheVersionProgramme()
+        {
+            string versionString = Environment.GetEnvironmentVariable("ClickOnce_CurrentVersion") ?? "0.0.0.0";
+            //Version version = Version.Parse(versionString);
+            return "v. "+versionString;
+        }
+    }   
 }
