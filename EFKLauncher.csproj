@@ -23,6 +23,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Config\delfile\fichiers.txt" />
+    <None Remove="Config\difficulty\EFK Easy.cfg" />
+    <None Remove="Config\difficulty\EFK Hard.cfg" />
+    <None Remove="Config\difficulty\EFK STD.cfg" />
+    <None Remove="Config\EFK\AdvancedEFK_default.txt" />
     <None Remove="Ressources\gfx\accolade.png" />
     <None Remove="Ressources\gfx\agplv3.png" />
     <None Remove="Ressources\gfx\checked.png" />
@@ -52,7 +57,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Config\difficulty\EFK Easy.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\difficulty\EFK Hard.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\difficulty\EFK STD.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\EFK\AdvancedEFK_default.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Ressources\gfx\EFK.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Config\delfile\fichiers.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -140,6 +163,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Update="Ressources\EFK_Ressources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -148,6 +176,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Ressources\EFK_Ressources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EFK_Ressources.Designer.cs</LastGenOutput>
@@ -155,21 +187,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Config\delfile\fichiers.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Config\difficulty\EFK Easy.cfg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Config\difficulty\EFK Hard.cfg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Config\difficulty\EFK STD.cfg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Config\EFK\AdvancedEFK_default.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Config\EFK\StandardEFK_default.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

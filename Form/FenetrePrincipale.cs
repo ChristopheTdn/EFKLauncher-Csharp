@@ -166,5 +166,33 @@ namespace EFKLauncher
             }
             Core.WriteLog(richTextBox_Log, "WIPE MAP : Ending WIPEMAP");
         }
+
+        private void textBox_SaveDir_TextChanged(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(this.textBox_SaveDir.Text))
+            {
+                this.textBox_SaveDir.Text = "";
+                Config.setConfig("SaveDir", "");
+            }
+            this.checkBox_ActivateWipeMap.Checked = false;
+            this.button_WIPEMAP.Enabled = false;
+            this.checkBox_ActivateWipeMap.Enabled = Directory.Exists(this.textBox_SaveDir.Text);
+        }
+
+        private void pictureBox_TwitchLogo_Click(object sender, EventArgs e)
+        {
+            Core.RunCmd("https://www.twitch.tv/tancredterror");
+
+        }
+
+        private void pictureBox_YoutubeLogo_Click(object sender, EventArgs e)
+        {
+            Core.RunCmd("https://www.youtube.com/@TancredTerror");
+        }
+
+        private void pictureBox_DiscordLogo_Click(object sender, EventArgs e)
+        {
+            Core.RunCmd("https://discord.com/invite/rbd36ERXyu");
+        }
     }
 }
