@@ -81,70 +81,42 @@
             // pictureBox_EFKLogo
             // 
             pictureBox_EFKLogo.Image = Ressources.EFK_Ressources.EFK;
-            pictureBox_EFKLogo.Location = new Point(11, 8);
+            resources.ApplyResources(pictureBox_EFKLogo, "pictureBox_EFKLogo");
             pictureBox_EFKLogo.Name = "pictureBox_EFKLogo";
-            pictureBox_EFKLogo.Size = new Size(102, 97);
-            pictureBox_EFKLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox_EFKLogo.TabIndex = 0;
             pictureBox_EFKLogo.TabStop = false;
             // 
             // label_TitleEFKC
             // 
-            label_TitleEFKC.AutoSize = true;
-            label_TitleEFKC.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_TitleEFKC.Location = new Point(107, 2);
+            resources.ApplyResources(label_TitleEFKC, "label_TitleEFKC");
             label_TitleEFKC.Name = "label_TitleEFKC";
-            label_TitleEFKC.Size = new Size(275, 94);
-            label_TitleEFKC.TabIndex = 1;
-            label_TitleEFKC.Text = "ESCAPE FROM\r\nKNOX COUNTY";
             // 
             // label_CollectionSteam
             // 
-            label_CollectionSteam.AutoSize = true;
+            resources.ApplyResources(label_CollectionSteam, "label_CollectionSteam");
             label_CollectionSteam.Cursor = Cursors.Hand;
-            label_CollectionSteam.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label_CollectionSteam.ForeColor = SystemColors.HotTrack;
-            label_CollectionSteam.Location = new Point(86, 133);
             label_CollectionSteam.Name = "label_CollectionSteam";
-            label_CollectionSteam.Size = new Size(485, 25);
-            label_CollectionSteam.TabIndex = 2;
-            label_CollectionSteam.Text = "ESCAPE FROM KNOX COUNTY Steam Collection (link)";
-            label_CollectionSteam.TextAlign = ContentAlignment.MiddleCenter;
             label_CollectionSteam.Click += label_CollectionSteam_Click;
             // 
             // picture_Steam
             // 
             picture_Steam.Image = Ressources.EFK_Ressources.Steam_Icon;
-            picture_Steam.Location = new Point(16, 111);
+            resources.ApplyResources(picture_Steam, "picture_Steam");
             picture_Steam.Name = "picture_Steam";
-            picture_Steam.Size = new Size(64, 64);
-            picture_Steam.SizeMode = PictureBoxSizeMode.StretchImage;
-            picture_Steam.TabIndex = 3;
             picture_Steam.TabStop = false;
             // 
             // button_LaunchPZ
             // 
-            button_LaunchPZ.BackgroundImageLayout = ImageLayout.None;
-            button_LaunchPZ.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(button_LaunchPZ, "button_LaunchPZ");
             button_LaunchPZ.Image = Ressources.EFK_Ressources.pz;
-            button_LaunchPZ.ImageAlign = ContentAlignment.MiddleLeft;
-            button_LaunchPZ.Location = new Point(458, 22);
             button_LaunchPZ.Name = "button_LaunchPZ";
-            button_LaunchPZ.Size = new Size(151, 49);
-            button_LaunchPZ.TabIndex = 4;
-            button_LaunchPZ.Text = "Launch PZ";
-            button_LaunchPZ.TextAlign = ContentAlignment.MiddleRight;
             button_LaunchPZ.UseVisualStyleBackColor = true;
             button_LaunchPZ.Click += button_LaunchPZ_Click;
             // 
             // checkBox_DebugMode
             // 
-            checkBox_DebugMode.AutoSize = true;
-            checkBox_DebugMode.Location = new Point(493, 77);
+            resources.ApplyResources(checkBox_DebugMode, "checkBox_DebugMode");
             checkBox_DebugMode.Name = "checkBox_DebugMode";
-            checkBox_DebugMode.Size = new Size(95, 19);
-            checkBox_DebugMode.TabIndex = 5;
-            checkBox_DebugMode.Text = "Debug Mode";
             checkBox_DebugMode.UseVisualStyleBackColor = true;
             checkBox_DebugMode.CheckedChanged += checkBox_DebugMode_CheckedChanged;
             // 
@@ -155,61 +127,41 @@
             groupBox_Repertoire.Controls.Add(label_SaveGame);
             groupBox_Repertoire.Controls.Add(textBox_ProfilPZ);
             groupBox_Repertoire.Controls.Add(label_ProfilPZ);
-            groupBox_Repertoire.Location = new Point(11, 197);
+            resources.ApplyResources(groupBox_Repertoire, "groupBox_Repertoire");
             groupBox_Repertoire.Name = "groupBox_Repertoire";
-            groupBox_Repertoire.Size = new Size(598, 99);
-            groupBox_Repertoire.TabIndex = 6;
             groupBox_Repertoire.TabStop = false;
-            groupBox_Repertoire.Text = "User Directories";
             // 
             // button_locateSaveDiR
             // 
-            button_locateSaveDiR.Location = new Point(482, 61);
+            resources.ApplyResources(button_locateSaveDiR, "button_locateSaveDiR");
             button_locateSaveDiR.Name = "button_locateSaveDiR";
-            button_locateSaveDiR.Size = new Size(84, 23);
-            button_locateSaveDiR.TabIndex = 4;
-            button_locateSaveDiR.Text = "Find";
             button_locateSaveDiR.UseVisualStyleBackColor = true;
             button_locateSaveDiR.Click += button_locateSaveDiR_Click;
             // 
             // textBox_SaveDir
             // 
             textBox_SaveDir.BackColor = SystemColors.ButtonHighlight;
-            textBox_SaveDir.Location = new Point(96, 61);
+            resources.ApplyResources(textBox_SaveDir, "textBox_SaveDir");
             textBox_SaveDir.Name = "textBox_SaveDir";
             textBox_SaveDir.ReadOnly = true;
-            textBox_SaveDir.Size = new Size(380, 23);
-            textBox_SaveDir.TabIndex = 3;
             textBox_SaveDir.TextChanged += textBox_SaveDir_TextChanged;
             // 
             // label_SaveGame
             // 
-            label_SaveGame.AutoSize = true;
-            label_SaveGame.Location = new Point(19, 64);
+            resources.ApplyResources(label_SaveGame, "label_SaveGame");
             label_SaveGame.Name = "label_SaveGame";
-            label_SaveGame.Size = new Size(71, 15);
-            label_SaveGame.TabIndex = 2;
-            label_SaveGame.Text = "Save Game :";
-            label_SaveGame.TextAlign = ContentAlignment.MiddleRight;
             // 
             // textBox_ProfilPZ
             // 
             textBox_ProfilPZ.BackColor = SystemColors.ButtonHighlight;
-            textBox_ProfilPZ.Location = new Point(96, 26);
+            resources.ApplyResources(textBox_ProfilPZ, "textBox_ProfilPZ");
             textBox_ProfilPZ.Name = "textBox_ProfilPZ";
             textBox_ProfilPZ.ReadOnly = true;
-            textBox_ProfilPZ.Size = new Size(470, 23);
-            textBox_ProfilPZ.TabIndex = 1;
             // 
             // label_ProfilPZ
             // 
-            label_ProfilPZ.AutoSize = true;
-            label_ProfilPZ.Location = new Point(32, 29);
+            resources.ApplyResources(label_ProfilPZ, "label_ProfilPZ");
             label_ProfilPZ.Name = "label_ProfilPZ";
-            label_ProfilPZ.Size = new Size(58, 15);
-            label_ProfilPZ.TabIndex = 0;
-            label_ProfilPZ.Text = "Profil PZ :";
-            label_ProfilPZ.TextAlign = ContentAlignment.MiddleRight;
             // 
             // groupBox_PreInitEFK
             // 
@@ -219,141 +171,92 @@
             groupBox_PreInitEFK.Controls.Add(radioButton_NoModif);
             groupBox_PreInitEFK.Controls.Add(radioButton_EFKModPreInstall);
             groupBox_PreInitEFK.Controls.Add(pictureBox1);
-            groupBox_PreInitEFK.Location = new Point(11, 305);
+            resources.ApplyResources(groupBox_PreInitEFK, "groupBox_PreInitEFK");
             groupBox_PreInitEFK.Name = "groupBox_PreInitEFK";
-            groupBox_PreInitEFK.Size = new Size(598, 78);
-            groupBox_PreInitEFK.TabIndex = 7;
             groupBox_PreInitEFK.TabStop = false;
-            groupBox_PreInitEFK.Text = "Pre Select EFK in PZ";
             // 
             // label_Important
             // 
-            label_Important.AutoSize = true;
-            label_Important.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(label_Important, "label_Important");
             label_Important.ForeColor = Color.Brown;
-            label_Important.Location = new Point(304, 19);
             label_Important.Name = "label_Important";
-            label_Important.Size = new Size(88, 15);
-            label_Important.TabIndex = 17;
-            label_Important.Text = "IMPORTANT  : ";
             // 
             // richTextBox_PreActivationTip
             // 
             richTextBox_PreActivationTip.BackColor = SystemColors.Control;
             richTextBox_PreActivationTip.BorderStyle = BorderStyle.None;
             richTextBox_PreActivationTip.ForeColor = SystemColors.WindowText;
-            richTextBox_PreActivationTip.ImeMode = ImeMode.On;
-            richTextBox_PreActivationTip.Location = new Point(300, 37);
+            resources.ApplyResources(richTextBox_PreActivationTip, "richTextBox_PreActivationTip");
             richTextBox_PreActivationTip.Name = "richTextBox_PreActivationTip";
-            richTextBox_PreActivationTip.Size = new Size(288, 32);
-            richTextBox_PreActivationTip.TabIndex = 3;
-            richTextBox_PreActivationTip.Text = "Choose \"no mods inits\" ONLY  if you want to activate manually MODS (no support for this choice).";
             // 
             // pictureBox2
             // 
             pictureBox2.Image = Ressources.EFK_Ressources.accolade;
-            pictureBox2.Location = new Point(284, 15);
+            resources.ApplyResources(pictureBox2, "pictureBox2");
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(14, 57);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
             // radioButton_NoModif
             // 
-            radioButton_NoModif.AutoSize = true;
-            radioButton_NoModif.Location = new Point(80, 45);
+            resources.ApplyResources(radioButton_NoModif, "radioButton_NoModif");
             radioButton_NoModif.Name = "radioButton_NoModif";
-            radioButton_NoModif.Size = new Size(198, 19);
-            radioButton_NoModif.TabIndex = 1;
             radioButton_NoModif.TabStop = true;
-            radioButton_NoModif.Text = "No Mods init (for Modders Only)";
             radioButton_NoModif.UseVisualStyleBackColor = true;
             radioButton_NoModif.CheckedChanged += radioButton_NoModif_CheckedChanged;
             // 
             // radioButton_EFKModPreInstall
             // 
-            radioButton_EFKModPreInstall.AutoSize = true;
-            radioButton_EFKModPreInstall.Location = new Point(80, 22);
+            resources.ApplyResources(radioButton_EFKModPreInstall, "radioButton_EFKModPreInstall");
             radioButton_EFKModPreInstall.Name = "radioButton_EFKModPreInstall";
-            radioButton_EFKModPreInstall.Size = new Size(207, 19);
-            radioButton_EFKModPreInstall.TabIndex = 1;
             radioButton_EFKModPreInstall.TabStop = true;
-            radioButton_EFKModPreInstall.Text = " MODS  Escape From Knox County";
             radioButton_EFKModPreInstall.UseVisualStyleBackColor = true;
             radioButton_EFKModPreInstall.CheckedChanged += radioButton_EFKModPreInstall_CheckedChanged;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Ressources.EFK_Ressources.performance;
-            pictureBox1.Location = new Point(19, 15);
+            resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(53, 53);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage_EFKTab);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(11, 383);
+            resources.ApplyResources(tabControl1, "tabControl1");
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(598, 249);
-            tabControl1.TabIndex = 8;
             // 
             // tabPage_EFKTab
             // 
             tabPage_EFKTab.BackColor = SystemColors.Control;
             tabPage_EFKTab.Controls.Add(richTextBox_Log);
-            tabPage_EFKTab.Location = new Point(4, 24);
+            resources.ApplyResources(tabPage_EFKTab, "tabPage_EFKTab");
             tabPage_EFKTab.Name = "tabPage_EFKTab";
-            tabPage_EFKTab.Padding = new Padding(3);
-            tabPage_EFKTab.Size = new Size(590, 221);
-            tabPage_EFKTab.TabIndex = 0;
-            tabPage_EFKTab.Text = "Log";
             // 
             // richTextBox_Log
             // 
-            richTextBox_Log.Location = new Point(6, 7);
+            resources.ApplyResources(richTextBox_Log, "richTextBox_Log");
             richTextBox_Log.Name = "richTextBox_Log";
-            richTextBox_Log.Size = new Size(578, 208);
-            richTextBox_Log.TabIndex = 0;
-            richTextBox_Log.Text = "";
             // 
             // tabPage2
             // 
-            tabPage2.Location = new Point(4, 24);
+            resources.ApplyResources(tabPage2, "tabPage2");
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(590, 221);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "About";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // button_WIPEMAP
             // 
-            button_WIPEMAP.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button_WIPEMAP.Location = new Point(60, 638);
+            resources.ApplyResources(button_WIPEMAP, "button_WIPEMAP");
             button_WIPEMAP.Name = "button_WIPEMAP";
-            button_WIPEMAP.Size = new Size(201, 51);
-            button_WIPEMAP.TabIndex = 9;
-            button_WIPEMAP.Text = "WIPE MAP";
             button_WIPEMAP.UseVisualStyleBackColor = true;
             button_WIPEMAP.Click += button_WIPEMAP_Click;
             // 
             // checkBox_ActivateWipeMap
             // 
-            checkBox_ActivateWipeMap.AutoSize = true;
-            checkBox_ActivateWipeMap.Enabled = false;
+            resources.ApplyResources(checkBox_ActivateWipeMap, "checkBox_ActivateWipeMap");
             checkBox_ActivateWipeMap.Image = Ressources.EFK_Ressources.danger;
-            checkBox_ActivateWipeMap.Location = new Point(60, 691);
             checkBox_ActivateWipeMap.Name = "checkBox_ActivateWipeMap";
-            checkBox_ActivateWipeMap.Size = new Size(201, 35);
-            checkBox_ActivateWipeMap.TabIndex = 10;
-            checkBox_ActivateWipeMap.Text = "Unlock  Wipe Map Bouton";
-            checkBox_ActivateWipeMap.TextImageRelation = TextImageRelation.ImageBeforeText;
             checkBox_ActivateWipeMap.UseVisualStyleBackColor = true;
             checkBox_ActivateWipeMap.CheckedChanged += checkBox_ActivateWipeMap_CheckedChanged;
             // 
@@ -361,11 +264,8 @@
             // 
             pictureBox_TwitchLogo.Cursor = Cursors.Hand;
             pictureBox_TwitchLogo.Image = Ressources.EFK_Ressources.Twitch_logo;
-            pictureBox_TwitchLogo.Location = new Point(119, 99);
+            resources.ApplyResources(pictureBox_TwitchLogo, "pictureBox_TwitchLogo");
             pictureBox_TwitchLogo.Name = "pictureBox_TwitchLogo";
-            pictureBox_TwitchLogo.Size = new Size(22, 22);
-            pictureBox_TwitchLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox_TwitchLogo.TabIndex = 11;
             pictureBox_TwitchLogo.TabStop = false;
             pictureBox_TwitchLogo.Click += pictureBox_TwitchLogo_Click;
             // 
@@ -373,11 +273,8 @@
             // 
             pictureBox_YoutubeLogo.Cursor = Cursors.Hand;
             pictureBox_YoutubeLogo.Image = Ressources.EFK_Ressources.youtube;
-            pictureBox_YoutubeLogo.Location = new Point(147, 99);
+            resources.ApplyResources(pictureBox_YoutubeLogo, "pictureBox_YoutubeLogo");
             pictureBox_YoutubeLogo.Name = "pictureBox_YoutubeLogo";
-            pictureBox_YoutubeLogo.Size = new Size(32, 22);
-            pictureBox_YoutubeLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox_YoutubeLogo.TabIndex = 12;
             pictureBox_YoutubeLogo.TabStop = false;
             pictureBox_YoutubeLogo.Click += pictureBox_YoutubeLogo_Click;
             // 
@@ -385,83 +282,52 @@
             // 
             pictureBox_DiscordLogo.Cursor = Cursors.Hand;
             pictureBox_DiscordLogo.Image = Ressources.EFK_Ressources.discord;
-            pictureBox_DiscordLogo.Location = new Point(185, 99);
+            resources.ApplyResources(pictureBox_DiscordLogo, "pictureBox_DiscordLogo");
             pictureBox_DiscordLogo.Name = "pictureBox_DiscordLogo";
-            pictureBox_DiscordLogo.Size = new Size(32, 22);
-            pictureBox_DiscordLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox_DiscordLogo.TabIndex = 13;
             pictureBox_DiscordLogo.TabStop = false;
             pictureBox_DiscordLogo.Click += pictureBox_DiscordLogo_Click;
             // 
             // label_VersionProgramme
             // 
-            label_VersionProgramme.AutoSize = true;
-            label_VersionProgramme.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label_VersionProgramme.Location = new Point(306, 104);
+            resources.ApplyResources(label_VersionProgramme, "label_VersionProgramme");
             label_VersionProgramme.Name = "label_VersionProgramme";
-            label_VersionProgramme.Size = new Size(58, 17);
-            label_VersionProgramme.TabIndex = 14;
-            label_VersionProgramme.Text = "v. 1.0.0.0";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(label1, "label1");
             label1.ForeColor = Color.Brown;
-            label1.Location = new Point(91, 158);
             label1.Name = "label1";
-            label1.Size = new Size(88, 15);
-            label1.TabIndex = 15;
-            label1.Text = "IMPORTANT  : ";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(175, 158);
+            resources.ApplyResources(label2, "label2");
             label2.Name = "label2";
-            label2.Size = new Size(265, 15);
-            label2.TabIndex = 16;
-            label2.Text = "Subscribing to this collection is a must to play EFK";
             // 
             // pictureBox3
             // 
             pictureBox3.Image = Ressources.EFK_Ressources.accolade;
-            pictureBox3.Location = new Point(296, 638);
+            resources.ApplyResources(pictureBox3, "pictureBox3");
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(13, 76);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 18;
             pictureBox3.TabStop = false;
             // 
             // label_Important_2
             // 
-            label_Important_2.AutoSize = true;
-            label_Important_2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(label_Important_2, "label_Important_2");
             label_Important_2.ForeColor = Color.Brown;
-            label_Important_2.Location = new Point(315, 638);
             label_Important_2.Name = "label_Important_2";
-            label_Important_2.Size = new Size(88, 15);
-            label_Important_2.TabIndex = 18;
-            label_Important_2.Text = "IMPORTANT  : ";
             // 
             // richTextBox_WIPEMAP_TIP
             // 
             richTextBox_WIPEMAP_TIP.BackColor = SystemColors.Control;
             richTextBox_WIPEMAP_TIP.BorderStyle = BorderStyle.None;
             richTextBox_WIPEMAP_TIP.ForeColor = SystemColors.WindowText;
-            richTextBox_WIPEMAP_TIP.ImeMode = ImeMode.On;
-            richTextBox_WIPEMAP_TIP.Location = new Point(315, 656);
+            resources.ApplyResources(richTextBox_WIPEMAP_TIP, "richTextBox_WIPEMAP_TIP");
             richTextBox_WIPEMAP_TIP.Name = "richTextBox_WIPEMAP_TIP";
-            richTextBox_WIPEMAP_TIP.Size = new Size(273, 58);
-            richTextBox_WIPEMAP_TIP.TabIndex = 3;
-            richTextBox_WIPEMAP_TIP.Text = "- Between 2 raids\n- Player in the hideout.\n- Main Menu or Quit PZ";
             // 
             // FenetrePrincipale
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(620, 726);
             Controls.Add(label_Important_2);
             Controls.Add(richTextBox_WIPEMAP_TIP);
             Controls.Add(pictureBox3);
@@ -483,9 +349,8 @@
             Controls.Add(label_CollectionSteam);
             Controls.Add(label_TitleEFKC);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FenetrePrincipale";
-            Text = "EFK Launcher";
             Load += FenetrePrincipale_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox_EFKLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)picture_Steam).EndInit();
