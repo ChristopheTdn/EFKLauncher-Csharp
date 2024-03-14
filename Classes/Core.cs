@@ -59,6 +59,7 @@ namespace EFKLauncher.Classes
 
         static public void launchPZ(RichTextBox textbox, bool debug)
         {
+            /*
             if (debug)
             {
                 Core.WriteLog(textbox, "LAUNCH-PZ : run command line "
@@ -72,6 +73,22 @@ namespace EFKLauncher.Classes
                              + Config.readConfig("SteamEXE"));
                 Process.Start(new ProcessStartInfo(Config.readConfig("SteamEXE")){ CreateNoWindow = true }); 
             }
+            */
+            if (debug)
+            {
+                Core.WriteLog(textbox, "LAUNCH-PZ : run command line "
+                     + Config.readConfig("SteamEXE")
+                     + "\"steam://run/108600//-debug/\"");
+                Process.Start(Config.readConfig("SteamEXE"), "steam://run/108600//-debug/");
+            }
+            else
+            {
+                Core.WriteLog(textbox, "LAUNCH-PZ : run command line "
+                             + Config.readConfig("SteamEXE")
+                             + "\"steam://run/108600/");
+                Process.Start(Config.readConfig("SteamEXE"), "steam://run/108600/");
+            }
+
         }
         static public string getProfilPZDirectory()
         {

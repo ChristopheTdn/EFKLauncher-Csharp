@@ -56,8 +56,14 @@ namespace EFKLauncher
 
 
             //Project zomboid exec
+            /*
             Config.setConfig("SteamEXE", ((string)Registry.GetValue("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Steam App 108600", "InstallLocation","PZ Exe not found. Error launching ")+ "\\ProjectZomboid64.bat"));
             Core.WriteLog(richTextBox_Log, "Find PZ executable : " + Config.readConfig("SteamEXE"));
+            */
+            Config.setConfig("SteamEXE", (string)Registry.GetValue("HKEY_CURRENT_USER\\Software\\Valve\\Steam", "SteamExe", "cle Inconnue"));
+            Core.WriteLog(richTextBox_Log, "Find Steam.exe : " + Config.readConfig("SteamEXE"));
+
+
 
             //Copyfile
 
