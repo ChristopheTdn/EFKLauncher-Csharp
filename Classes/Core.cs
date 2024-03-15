@@ -79,7 +79,7 @@ namespace EFKLauncher.Classes
                 Core.WriteLog(textbox, "LAUNCH-PZ : run command line "
                      + Config.readConfig("SteamEXE")
                      + "\"steam://run/108600//-debug/\"");
-                Process.Start(Config.readConfig("SteamEXE"), "steam://run/108600//-debug/");
+                Process.Start(new ProcessStartInfo("cmd", $"/c start {Config.readConfig("SteamEXE")} steam://run/108600//-debug/") { CreateNoWindow = true });
             }
             else
             {
@@ -108,9 +108,16 @@ namespace EFKLauncher.Classes
         }
         static public void delFile(RichTextBox textbox, string saveDir, string file)
         {
-            File.Delete(saveDir + "\\" + file);
+            try { 
+            File.Delete(saveDir + file);
             textbox.AppendText("     >" + file + " deleted." + Environment.NewLine);
             textbox.ScrollToCaret();
+            
+            }
+            catch {
+                textbox.AppendText("     > ERROR ! :" + file + " NOT deleted." + Environment.NewLine);
+                textbox.ScrollToCaret();
+            }
 
         }
 
@@ -135,17 +142,24 @@ namespace EFKLauncher.Classes
             TextBox textBox_SaveDir,
             RichTextBox richTextBox_Log)
         {
-            Core.WriteLog(richTextBox_Log, "WIPE MAP : Starting WIPEMAP");
-            string fileName = @"Config\delfile\fichiers.txt";
-            IEnumerable<string> lines = File.ReadLines(fileName);
+            string saveDir = textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text + "\\";
+            string fichierDelFile = @"Config\delfile\fichiers.txt";
 
-            foreach (string line in lines)
+            Core.WriteLog(richTextBox_Log, "WIPE MAP : Starting WIPEMAP");
+
+            string[] listeDelFile = File.ReadAllLines(fichierDelFile);
+
+            var fichiersSaveDir = Directory.GetFiles(textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text).Select(Path.GetFileName); ;
+
+            foreach (string line in fichiersSaveDir)
             {
-                if (File.Exists(textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text + "\\" + line))
+
+                if (!listeDelFile.Contains(line))
                 {
+
                     Core.delFile(
                         richTextBox_Log,
-                        textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text,
+                        saveDir,
                         line);
                 }
             }
