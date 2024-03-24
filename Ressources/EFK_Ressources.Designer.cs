@@ -283,6 +283,16 @@ namespace EFKLauncher.Ressources {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tof {
+            get {
+                object obj = ResourceManager.GetObject("tof", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tt {
             get {
                 object obj = ResourceManager.GetObject("tt", resourceCulture);

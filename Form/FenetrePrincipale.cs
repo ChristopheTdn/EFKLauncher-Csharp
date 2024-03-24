@@ -110,20 +110,28 @@ namespace EFKLauncher
             if (File.Exists(jsonFilePath))
             {
                 Core.WriteLog(richTextBox_Log, "AUTO WIPEMAP Activated");
-                string json = File.ReadAllText(jsonFilePath);
+                try
+                {
+                    string json = File.ReadAllText(jsonFilePath);
 
-                // Désérialisation en utilisant System.Text.Json
-                var jsonDocument = JsonDocument.Parse(json);
-                var root = jsonDocument.RootElement;
+                    // Désérialisation en utilisant System.Text.Json
+                    var jsonDocument = JsonDocument.Parse(json);
+                    var root = jsonDocument.RootElement;
 
-                // récupere donnée JSON "SaveGameDir" :
-                string saveDir = root.GetProperty("SaveGameDir").ToString();
-                textBox_SaveDir.Text = saveDir;
-                Core.WriteLog(richTextBox_Log, $"set SavegameDir >> {saveDir}");
-                Core.WipeMap(textBox_ProfilPZ, textBox_SaveDir, richTextBox_Log);
-                File.Delete(jsonFilePath);
-                Core.WriteLog(richTextBox_Log, "WIPEMAP.json file deleted");
-                Core.WriteLog(richTextBox_Log, "AUTO WIPEMAP Done");
+                    // récupere donnée JSON "SaveGameDir" :
+                    string saveDir = root.GetProperty("SaveGameDir").ToString();
+                    textBox_SaveDir.Text = saveDir;
+                    Core.WriteLog(richTextBox_Log, $"set SavegameDir >> {saveDir}");
+                    Core.WipeMap(textBox_ProfilPZ, textBox_SaveDir, richTextBox_Log);
+                    File.Delete(jsonFilePath);
+                    Core.WriteLog(richTextBox_Log, "WIPEMAP.json file deleted");
+                    Core.WriteLog(richTextBox_Log, "AUTO WIPEMAP Done");
+                }
+                catch (Exception error)
+                {
+                    Core.WriteLog(richTextBox_Log, "AUTO WIPEMAP ERROR : "+error.ToString());
+                    Core.WriteLog(richTextBox_Log, "AUTO WIPEMAP Aborted");
+                }
             }
 
         }
@@ -131,7 +139,7 @@ namespace EFKLauncher
         private void label_CollectionSteam_Click(object sender, EventArgs e)
         {
             Core.PlaySound(@"sounds\clic.wav");
-            Core.RunCmd("steam://openurl/https://steamcommunity.com/sharedfiles/filedetails/?id=3048855836");
+            Core.RunCmd("https://discord.com/invite/rbd36ERXyu");
         }
 
         private void button_LaunchPZ_Click(object sender, EventArgs e)

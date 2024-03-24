@@ -79,7 +79,7 @@ namespace EFKLauncher.Classes
                 Core.WriteLog(textbox, "LAUNCH-PZ : run command line "
                      + Config.readConfig("SteamEXE")
                      + "\"steam://run/108600//-debug/\"");
-                Process.Start(new ProcessStartInfo("cmd", $"/c start {Config.readConfig("SteamEXE")} steam://run/108600//-debug/") { CreateNoWindow = true });
+                    Process.Start(new ProcessStartInfo("cmd", $"/c start \"{Config.readConfig("SteamEXE")}\" steam://run/108600//-debug/") { CreateNoWindow = true });
             }
             else
             {

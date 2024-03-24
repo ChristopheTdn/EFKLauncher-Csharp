@@ -53,6 +53,20 @@
             tabPage_EFKTab = new TabPage();
             richTextBox_Log = new RichTextBox();
             tabPage2 = new TabPage();
+            groupBox1 = new GroupBox();
+            pictureBox6 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            label11 = new Label();
+            label9 = new Label();
+            label6 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label5 = new Label();
+            label12 = new Label();
+            label10 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            pictureBox4 = new PictureBox();
             button_WIPEMAP = new Button();
             checkBox_ActivateWipeMap = new CheckBox();
             pictureBox_TwitchLogo = new PictureBox();
@@ -64,6 +78,8 @@
             pictureBox3 = new PictureBox();
             label_Important_2 = new Label();
             richTextBox_WIPEMAP_TIP = new RichTextBox();
+            openFileDialog1 = new OpenFileDialog();
+            pictureBox7 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox_EFKLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picture_Steam).BeginInit();
             groupBox_Repertoire.SuspendLayout();
@@ -72,10 +88,16 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
             tabPage_EFKTab.SuspendLayout();
+            tabPage2.SuspendLayout();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_TwitchLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_YoutubeLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_DiscordLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
             // pictureBox_EFKLogo
@@ -241,9 +263,107 @@
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = SystemColors.Control;
+            tabPage2.Controls.Add(pictureBox6);
+            tabPage2.Controls.Add(groupBox1);
+            tabPage2.Controls.Add(label3);
+            tabPage2.Controls.Add(pictureBox5);
+            tabPage2.Controls.Add(pictureBox4);
+            tabPage2.Controls.Add(label11);
+            tabPage2.Controls.Add(label7);
+            tabPage2.Controls.Add(label9);
+            tabPage2.Controls.Add(label10);
+            tabPage2.Controls.Add(label6);
+            tabPage2.Controls.Add(label12);
+            tabPage2.Controls.Add(label8);
+            tabPage2.Controls.Add(label5);
             resources.ApplyResources(tabPage2, "tabPage2");
             tabPage2.Name = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(pictureBox7);
+            resources.ApplyResources(groupBox1, "groupBox1");
+            groupBox1.Name = "groupBox1";
+            groupBox1.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Ressources.EFK_Ressources.tof;
+            resources.ApplyResources(pictureBox6, "pictureBox6");
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Ressources.EFK_Ressources.tt;
+            resources.ApplyResources(pictureBox5, "pictureBox5");
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.TabStop = false;
+            // 
+            // label11
+            // 
+            resources.ApplyResources(label11, "label11");
+            label11.Name = "label11";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(label9, "label9");
+            label9.Name = "label9";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(label6, "label6");
+            label6.Name = "label6";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(label8, "label8");
+            label8.Name = "label8";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(label7, "label7");
+            label7.Name = "label7";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
+            // 
+            // label12
+            // 
+            resources.ApplyResources(label12, "label12");
+            label12.Cursor = Cursors.Hand;
+            label12.ForeColor = SystemColors.HotTrack;
+            label12.Name = "label12";
+            label12.Click += label_CollectionSteam_Click;
+            // 
+            // label10
+            // 
+            resources.ApplyResources(label10, "label10");
+            label10.Cursor = Cursors.Hand;
+            label10.ForeColor = SystemColors.HotTrack;
+            label10.Name = "label10";
+            label10.Click += label_CollectionSteam_Click;
+            // 
+            // label4
+            // 
+            resources.ApplyResources(label4, "label4");
+            label4.Name = "label4";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(label3, "label3");
+            label3.Name = "label3";
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Ressources.EFK_Ressources.EFK;
+            resources.ApplyResources(pictureBox4, "pictureBox4");
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.TabStop = false;
             // 
             // button_WIPEMAP
             // 
@@ -324,6 +444,17 @@
             resources.ApplyResources(richTextBox_WIPEMAP_TIP, "richTextBox_WIPEMAP_TIP");
             richTextBox_WIPEMAP_TIP.Name = "richTextBox_WIPEMAP_TIP";
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.Image = Ressources.EFK_Ressources.info;
+            resources.ApplyResources(pictureBox7, "pictureBox7");
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.TabStop = false;
+            // 
             // FenetrePrincipale
             // 
             resources.ApplyResources(this, "$this");
@@ -362,10 +493,18 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabControl1.ResumeLayout(false);
             tabPage_EFKTab.ResumeLayout(false);
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_TwitchLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_YoutubeLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox_DiscordLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -407,5 +546,21 @@
         private PictureBox pictureBox3;
         private Label label_Important_2;
         private RichTextBox richTextBox_WIPEMAP_TIP;
+        private OpenFileDialog openFileDialog1;
+        private Label label4;
+        private Label label3;
+        private PictureBox pictureBox4;
+        private GroupBox groupBox1;
+        private Label label5;
+        private Label label9;
+        private Label label6;
+        private Label label8;
+        private Label label7;
+        private Label label10;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox6;
+        private Label label11;
+        private Label label12;
+        private PictureBox pictureBox7;
     }
 }
