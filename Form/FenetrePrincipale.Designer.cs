@@ -36,7 +36,6 @@
             button_LaunchPZ = new Button();
             checkBox_DebugMode = new CheckBox();
             groupBox_Repertoire = new GroupBox();
-            button_locateSaveDiR = new Button();
             textBox_SaveDir = new TextBox();
             label_SaveGame = new Label();
             textBox_ProfilPZ = new TextBox();
@@ -138,7 +137,6 @@
             // 
             // groupBox_Repertoire
             // 
-            groupBox_Repertoire.Controls.Add(button_locateSaveDiR);
             groupBox_Repertoire.Controls.Add(textBox_SaveDir);
             groupBox_Repertoire.Controls.Add(label_SaveGame);
             groupBox_Repertoire.Controls.Add(textBox_ProfilPZ);
@@ -146,13 +144,6 @@
             resources.ApplyResources(groupBox_Repertoire, "groupBox_Repertoire");
             groupBox_Repertoire.Name = "groupBox_Repertoire";
             groupBox_Repertoire.TabStop = false;
-            // 
-            // button_locateSaveDiR
-            // 
-            resources.ApplyResources(button_locateSaveDiR, "button_locateSaveDiR");
-            button_locateSaveDiR.Name = "button_locateSaveDiR";
-            button_locateSaveDiR.UseVisualStyleBackColor = true;
-            button_locateSaveDiR.Click += button_locateSaveDiR_Click;
             // 
             // textBox_SaveDir
             // 
@@ -473,7 +464,6 @@
         private TextBox textBox_SaveDir;
         private Label label_SaveGame;
         private Label label_ProfilPZ;
-        private Button button_locateSaveDiR;
         private FolderBrowserDialog folderBrowserDialog1;
         private GroupBox groupBox_PreInitEFK;
         private PictureBox pictureBox1;

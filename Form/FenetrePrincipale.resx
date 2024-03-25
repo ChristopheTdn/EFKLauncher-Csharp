@@ -295,35 +295,11 @@ KNOX COUNTY</value>
   <data name="&gt;&gt;checkBox_DebugMode.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="button_locateSaveDiR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>482, 61</value>
-  </data>
-  <data name="button_locateSaveDiR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 23</value>
-  </data>
-  <data name="button_locateSaveDiR.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="button_locateSaveDiR.Text" xml:space="preserve">
-    <value>Find</value>
-  </data>
-  <data name="&gt;&gt;button_locateSaveDiR.Name" xml:space="preserve">
-    <value>button_locateSaveDiR</value>
-  </data>
-  <data name="&gt;&gt;button_locateSaveDiR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_locateSaveDiR.Parent" xml:space="preserve">
-    <value>groupBox_Repertoire</value>
-  </data>
-  <data name="&gt;&gt;button_locateSaveDiR.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="textBox_SaveDir.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 61</value>
   </data>
   <data name="textBox_SaveDir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>380, 23</value>
+    <value>470, 23</value>
   </data>
   <data name="textBox_SaveDir.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -338,7 +314,7 @@ KNOX COUNTY</value>
     <value>groupBox_Repertoire</value>
   </data>
   <data name="&gt;&gt;textBox_SaveDir.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="label_SaveGame.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -368,7 +344,7 @@ KNOX COUNTY</value>
     <value>groupBox_Repertoire</value>
   </data>
   <data name="&gt;&gt;label_SaveGame.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="textBox_ProfilPZ.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 26</value>
@@ -389,7 +365,7 @@ KNOX COUNTY</value>
     <value>groupBox_Repertoire</value>
   </data>
   <data name="&gt;&gt;textBox_ProfilPZ.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="label_ProfilPZ.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -419,7 +395,7 @@ KNOX COUNTY</value>
     <value>groupBox_Repertoire</value>
   </data>
   <data name="&gt;&gt;label_ProfilPZ.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="groupBox_Repertoire.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 197</value>
