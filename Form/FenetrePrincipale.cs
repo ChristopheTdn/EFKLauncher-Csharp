@@ -33,17 +33,12 @@ namespace EFKLauncher
 
 
             // Savedir
-            checkBox_ActivateWipeMap.Checked = false;
-            checkBox_ActivateWipeMap.Enabled = false;
             textBox_SaveDir.Text = Config.readConfig("SaveDir");
             if (!Directory.Exists(textBox_ProfilPZ.Text + @"\Saves\Sandbox\"+ textBox_SaveDir.Text))
             {
                 textBox_SaveDir.Text = "";
                 Config.setConfig("SaveDir", "");
-                checkBox_ActivateWipeMap.Enabled = false;
             }
-
-            button_WIPEMAP.Enabled = false;
             Core.WriteLog(richTextBox_Log, "Setting Savedir");
 
 
@@ -77,6 +72,8 @@ namespace EFKLauncher
                              textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK STD.cfg"
                          );
             Core.WriteLog(richTextBox_Log, "Install SandBox Presets : EFK Easy.cfg, EFK Hard.cfg, EFK STD.cfg");
+
+
 
 
             // PreIni EFKMod
@@ -139,7 +136,7 @@ namespace EFKLauncher
         private void label_CollectionSteam_Click(object sender, EventArgs e)
         {
             Core.PlaySound(@"sounds\clic.wav");
-            Core.RunCmd("https://discord.com/invite/rbd36ERXyu");
+            Core.RunCmd("steam://openurl/https://steamcommunity.com/sharedfiles/filedetails/?id=3048855836");
         }
 
         private void button_LaunchPZ_Click(object sender, EventArgs e)
@@ -148,9 +145,14 @@ namespace EFKLauncher
             Core.WriteLog(richTextBox_Log, "LAUNCH-PZ : init Launch PZ ");
             if ( radioButton_EFKModPreInstall.Checked)
             {
-                Core.copyFile(@"Config\EFK\AdvancedEFK_default.txt",
+                Core.copyFile(@"Config\EFK\default.txt",
                                textBox_ProfilPZ.Text + @"\mods\default.txt");
                 Core.WriteLog(richTextBox_Log, "LAUNCH-PZ : update \"\\mods\\default.txt\" with EFK Mod list");
+
+                Core.copyFile(@"Config\EFK\SurvivorOptions.lua",
+                             textBox_ProfilPZ.Text + @"\lua\SurvivorOptions.lua");
+                Core.WriteLog(richTextBox_Log, "LAUNCH-PZ : copy \"\\lua\\SurvivorOptions.lua\" (SCAVs options)");
+
             }
             Core.WriteLog(richTextBox_Log, "LAUNCH-PZ : Debug mode >" + checkBox_DebugMode.Checked.ToString());
             Core.launchPZ(richTextBox_Log, checkBox_DebugMode.Checked);
@@ -203,12 +205,6 @@ namespace EFKLauncher
             }
         }
 
-        private void checkBox_ActivateWipeMap_CheckedChanged(object sender, EventArgs e)
-        {
-            Core.PlaySound(@"sounds\clic.wav");
-             button_WIPEMAP.Enabled = checkBox_ActivateWipeMap.Checked;
-        }
-
         private void button_WIPEMAP_Click(object sender, EventArgs e)
         {
             Core.PlaySound(@"sounds\clic.wav");
@@ -220,16 +216,13 @@ namespace EFKLauncher
 
         private void textBox_SaveDir_TextChanged(object sender, EventArgs e)
         {     
-            checkBox_ActivateWipeMap.Checked = false;
-            checkBox_ActivateWipeMap.Enabled = true;
+
             if (!Directory.Exists(textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text))
             {
                  textBox_SaveDir.Text = "";
                 Config.setConfig("SaveDir", "");
-                checkBox_ActivateWipeMap.Enabled = false;
             }
-
-             button_WIPEMAP.Enabled = false;        }
+        }
 
         private void pictureBox_TwitchLogo_Click(object sender, EventArgs e)
         {

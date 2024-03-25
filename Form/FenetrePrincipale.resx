@@ -142,7 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox_EFKLogo.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="label_TitleEFKC.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -173,7 +173,7 @@ KNOX COUNTY</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_TitleEFKC.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>14</value>
   </data>
   <data name="label_CollectionSteam.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -206,7 +206,7 @@ KNOX COUNTY</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_CollectionSteam.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>13</value>
   </data>
   <data name="picture_Steam.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 111</value>
@@ -230,7 +230,7 @@ KNOX COUNTY</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;picture_Steam.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>12</value>
   </data>
   <data name="button_LaunchPZ.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
@@ -266,7 +266,7 @@ KNOX COUNTY</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button_LaunchPZ.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>11</value>
   </data>
   <data name="checkBox_DebugMode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -293,7 +293,7 @@ KNOX COUNTY</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBox_DebugMode.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>10</value>
   </data>
   <data name="button_locateSaveDiR.Location" type="System.Drawing.Point, System.Drawing">
     <value>482, 61</value>
@@ -443,7 +443,7 @@ KNOX COUNTY</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox_Repertoire.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>9</value>
   </data>
   <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -629,7 +629,7 @@ KNOX COUNTY</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox_PreInitEFK.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>8</value>
   </data>
   <data name="richTextBox_Log.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 7</value>
@@ -1186,67 +1186,7 @@ Launcher</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="button_WIPEMAP.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 15.75pt, style=Bold</value>
-  </data>
-  <data name="button_WIPEMAP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 638</value>
-  </data>
-  <data name="button_WIPEMAP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 51</value>
-  </data>
-  <data name="button_WIPEMAP.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="button_WIPEMAP.Text" xml:space="preserve">
-    <value>WIPE MAP</value>
-  </data>
-  <data name="&gt;&gt;button_WIPEMAP.Name" xml:space="preserve">
-    <value>button_WIPEMAP</value>
-  </data>
-  <data name="&gt;&gt;button_WIPEMAP.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_WIPEMAP.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;button_WIPEMAP.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="checkBox_ActivateWipeMap.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_ActivateWipeMap.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="checkBox_ActivateWipeMap.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 691</value>
-  </data>
-  <data name="checkBox_ActivateWipeMap.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 35</value>
-  </data>
-  <data name="checkBox_ActivateWipeMap.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="checkBox_ActivateWipeMap.Text" xml:space="preserve">
-    <value>Unlock  Wipe Map Bouton</value>
-  </data>
-  <data name="checkBox_ActivateWipeMap.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ActivateWipeMap.Name" xml:space="preserve">
-    <value>checkBox_ActivateWipeMap</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ActivateWipeMap.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ActivateWipeMap.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;checkBox_ActivateWipeMap.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>7</value>
   </data>
   <data name="pictureBox_TwitchLogo.Location" type="System.Drawing.Point, System.Drawing">
     <value>119, 99</value>
@@ -1270,7 +1210,7 @@ Launcher</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox_TwitchLogo.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="pictureBox_YoutubeLogo.Location" type="System.Drawing.Point, System.Drawing">
     <value>147, 99</value>
@@ -1294,7 +1234,7 @@ Launcher</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox_YoutubeLogo.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="pictureBox_DiscordLogo.Location" type="System.Drawing.Point, System.Drawing">
     <value>185, 99</value>
@@ -1318,7 +1258,7 @@ Launcher</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox_DiscordLogo.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="label_VersionProgramme.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1348,7 +1288,7 @@ Launcher</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label_VersionProgramme.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1378,7 +1318,7 @@ Launcher</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1408,90 +1348,7 @@ Launcher</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 638</value>
-  </data>
-  <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 76</value>
-  </data>
-  <data name="pictureBox3.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pictureBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.Name" xml:space="preserve">
-    <value>pictureBox3</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label_Important_2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label_Important_2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt, style=Bold</value>
-  </data>
-  <data name="label_Important_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 638</value>
-  </data>
-  <data name="label_Important_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 15</value>
-  </data>
-  <data name="label_Important_2.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="label_Important_2.Text" xml:space="preserve">
-    <value>IMPORTANT  : </value>
-  </data>
-  <data name="&gt;&gt;label_Important_2.Name" xml:space="preserve">
-    <value>label_Important_2</value>
-  </data>
-  <data name="&gt;&gt;label_Important_2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_Important_2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label_Important_2.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="richTextBox_WIPEMAP_TIP.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>On</value>
-  </data>
-  <data name="richTextBox_WIPEMAP_TIP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 656</value>
-  </data>
-  <data name="richTextBox_WIPEMAP_TIP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 58</value>
-  </data>
-  <data name="richTextBox_WIPEMAP_TIP.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="richTextBox_WIPEMAP_TIP.Text" xml:space="preserve">
-    <value>- Between 2 raids
-- Player in the hideout.
-- Main Menu or Quit PZ</value>
-  </data>
-  <data name="&gt;&gt;richTextBox_WIPEMAP_TIP.Name" xml:space="preserve">
-    <value>richTextBox_WIPEMAP_TIP</value>
-  </data>
-  <data name="&gt;&gt;richTextBox_WIPEMAP_TIP.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;richTextBox_WIPEMAP_TIP.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;richTextBox_WIPEMAP_TIP.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>184, 17</value>
@@ -1503,7 +1360,7 @@ Launcher</value>
     <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>620, 726</value>
+    <value>620, 638</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

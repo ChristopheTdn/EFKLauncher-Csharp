@@ -28,6 +28,8 @@
     <None Remove="Config\difficulty\EFK Hard.cfg" />
     <None Remove="Config\difficulty\EFK STD.cfg" />
     <None Remove="Config\EFK\AdvancedEFK_default.txt" />
+    <None Remove="Config\EFK\default.txt" />
+    <None Remove="Config\EFK\SurvivorOptions.lua" />
     <None Remove="Ressources\gfx\accolade.png" />
     <None Remove="Ressources\gfx\agplv3.png" />
     <None Remove="Ressources\gfx\checked.png" />
@@ -68,7 +70,10 @@
     <Content Include="Config\difficulty\EFK STD.cfg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Config\EFK\AdvancedEFK_default.txt">
+    <Content Include="Config\EFK\default.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\EFK\SurvivorOptions.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Ressources\gfx\EFK.ico" />
