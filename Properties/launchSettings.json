@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EFKLauncher": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

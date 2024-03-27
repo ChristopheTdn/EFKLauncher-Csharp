@@ -119,7 +119,9 @@ namespace EFKLauncher
                     string saveDir = root.GetProperty("SaveGameDir").ToString();
                     textBox_SaveDir.Text = saveDir;
                     Core.WriteLog(richTextBox_Log, $"set SavegameDir >> {saveDir}");
+
                     Core.WipeMap(textBox_ProfilPZ, textBox_SaveDir, richTextBox_Log);
+
                     File.Delete(jsonFilePath);
                     Core.WriteLog(richTextBox_Log, "WIPEMAP.json file deleted");
                     Core.WriteLog(richTextBox_Log, "AUTO WIPEMAP Done");
@@ -204,15 +206,6 @@ namespace EFKLauncher
                 Config.setConfig("PreIniEFK", "false");
             }
         }
-
-        private void button_WIPEMAP_Click(object sender, EventArgs e)
-        {
-            Core.PlaySound(@"sounds\clic.wav");
-
-            Core.WipeMap(textBox_ProfilPZ, textBox_SaveDir, richTextBox_Log);
-
-        }
-
 
         private void textBox_SaveDir_TextChanged(object sender, EventArgs e)
         {     

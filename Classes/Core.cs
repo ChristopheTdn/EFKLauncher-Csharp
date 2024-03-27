@@ -16,6 +16,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Policy;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace EFKLauncher.Classes
@@ -108,19 +109,23 @@ namespace EFKLauncher.Classes
         }
         static public void delFile(RichTextBox textbox, string saveDir, string file)
         {
-            try { 
-            File.Delete(saveDir + file);
-            textbox.AppendText("     >" + file + " deleted." + Environment.NewLine);
-            textbox.ScrollToCaret();
-            
+            try
+            {
+                if (File.Exists(saveDir + file))
+                {
+                    File.Delete(saveDir + file.ToString());
+                }
             }
-            catch {
-                textbox.AppendText("     > ERROR ! :" + file + " NOT deleted." + Environment.NewLine);
+            catch (Exception e)
+            {
+                string msg = e.Message.ToString();
+                string texte = " > ERROR delFile ! :" + file.ToString() + " NOT deleted. (" + msg + ").";
+                textbox.AppendText(texte + Environment.NewLine);
                 textbox.ScrollToCaret();
             }
+            
 
         }
-
 
         static public void WriteLog(RichTextBox textbox, string source)
         {
@@ -151,19 +156,29 @@ namespace EFKLauncher.Classes
 
             var fichiersSaveDir = Directory.GetFiles(textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text).Select(Path.GetFileName); ;
 
-            foreach (string line in fichiersSaveDir)
+            int nbrFileDeleted = 0;
+            foreach (var line in fichiersSaveDir)
             {
-
-                if (!listeDelFile.Contains(line))
+                if (!listeDelFile.Contains(line) &
+                    line != null)
                 {
+                    try
+                    {
+                        Core.delFile(
+                            richTextBox_Log,
+                            saveDir,
+                            line.ToString());
+                        nbrFileDeleted++;
+                    }
+                    catch (Exception e)
+                    {
+                        string msg = e.Message.ToString();
+                        Core.WriteLog(richTextBox_Log, "     > ERROR ! :"  + msg + ").");
 
-                    Core.delFile(
-                        richTextBox_Log,
-                        saveDir,
-                        line);
+                    }
                 }
             }
-
+            Core.WriteLog(richTextBox_Log, "WIPE MAP : "+nbrFileDeleted.ToString()+ " files deleted.");
             Core.WriteLog(richTextBox_Log, "WIPE MAP : Ending WIPEMAP");
             Core.PlaySound(@"sounds\whoosh.wav");
         }
