@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.IO;
 using Microsoft.Win32;
 using System.Text.Json;
+using System.Globalization;
 
 namespace EFKLauncher
 {
@@ -34,7 +35,7 @@ namespace EFKLauncher
 
             // Savedir
             textBox_SaveDir.Text = Config.readConfig("SaveDir");
-            if (!Directory.Exists(textBox_ProfilPZ.Text + @"\Saves\Sandbox\"+ textBox_SaveDir.Text))
+            if (!Directory.Exists(textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text))
             {
                 textBox_SaveDir.Text = "";
                 Config.setConfig("SaveDir", "");
@@ -81,17 +82,17 @@ namespace EFKLauncher
                 Config.readConfig("PreIniEFK") == "true"
                 )
             {
-                 
+
                 radioButton_EFKModPreInstall.Checked = true;
                 Config.setConfig("PreIniEFK", "true");
             }
             else
             {
-                 radioButton_NoModif.Checked = true;
+                radioButton_NoModif.Checked = true;
             }
 
             // version programme
-             label_VersionProgramme.Text = Core.AfficheVersionProgramme();
+            label_VersionProgramme.Text = Core.AfficheVersionProgramme();
 
             // Init Timer
             System.Timers.Timer temporisation = new System.Timers.Timer(10000);
@@ -128,7 +129,7 @@ namespace EFKLauncher
                 }
                 catch (Exception error)
                 {
-                    Core.WriteLog(richTextBox_Log, "AUTO WIPEMAP ERROR : "+error.ToString());
+                    Core.WriteLog(richTextBox_Log, "AUTO WIPEMAP ERROR : " + error.ToString());
                     Core.WriteLog(richTextBox_Log, "AUTO WIPEMAP Aborted");
                 }
             }
@@ -145,7 +146,7 @@ namespace EFKLauncher
         {
             Core.PlaySound(@"sounds\clic.wav");
             Core.WriteLog(richTextBox_Log, "LAUNCH-PZ : init Launch PZ ");
-            if ( radioButton_EFKModPreInstall.Checked)
+            if (radioButton_EFKModPreInstall.Checked)
             {
                 Core.copyFile(@"Config\EFK\default.txt",
                                textBox_ProfilPZ.Text + @"\mods\default.txt");
@@ -201,18 +202,18 @@ namespace EFKLauncher
         private void radioButton_NoModif_CheckedChanged(object sender, EventArgs e)
         {
             Core.PlaySound(@"sounds\clic.wav");
-            if ( radioButton_NoModif.Checked == true)
+            if (radioButton_NoModif.Checked == true)
             {
                 Config.setConfig("PreIniEFK", "false");
             }
         }
 
         private void textBox_SaveDir_TextChanged(object sender, EventArgs e)
-        {     
+        {
 
             if (!Directory.Exists(textBox_ProfilPZ.Text + @"\Saves\Sandbox\" + textBox_SaveDir.Text))
             {
-                 textBox_SaveDir.Text = "";
+                textBox_SaveDir.Text = "";
                 Config.setConfig("SaveDir", "");
             }
         }
@@ -235,5 +236,18 @@ namespace EFKLauncher
             Core.PlaySound(@"sounds\clic.wav");
             Core.RunCmd("https://discord.com/invite/rbd36ERXyu");
         }
+
+        private void label_SourceCodeLink_Click(object sender, EventArgs e)
+        {
+            Core.PlaySound(@"sounds\clic.wav");
+            Core.RunCmd("https://github.com/ChristopheTdn/EFKLauncher-Csharp");
+        }
+
+        private void label_DiscordProject_Link_Click(object sender, EventArgs e)
+        {
+            Core.PlaySound(@"sounds\clic.wav");
+            Core.RunCmd("https://discord.com/invite/rbd36ERXyu");
+        }
+
     }
 }

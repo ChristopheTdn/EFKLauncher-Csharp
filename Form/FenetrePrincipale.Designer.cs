@@ -52,6 +52,8 @@
             tabPage_EFKTab = new TabPage();
             richTextBox_Log = new RichTextBox();
             tabPage2 = new TabPage();
+            label_DiscordProject_Link = new Label();
+            label_SourceCodeLink = new Label();
             pictureBox6 = new PictureBox();
             groupBox1 = new GroupBox();
             label4 = new Label();
@@ -62,9 +64,7 @@
             label11 = new Label();
             label7 = new Label();
             label9 = new Label();
-            label10 = new Label();
             label6 = new Label();
-            label12 = new Label();
             label8 = new Label();
             label5 = new Label();
             pictureBox_TwitchLogo = new PictureBox();
@@ -249,6 +249,8 @@
             // tabPage2
             // 
             tabPage2.BackColor = SystemColors.Control;
+            tabPage2.Controls.Add(label_DiscordProject_Link);
+            tabPage2.Controls.Add(label_SourceCodeLink);
             tabPage2.Controls.Add(pictureBox6);
             tabPage2.Controls.Add(groupBox1);
             tabPage2.Controls.Add(label3);
@@ -257,13 +259,25 @@
             tabPage2.Controls.Add(label11);
             tabPage2.Controls.Add(label7);
             tabPage2.Controls.Add(label9);
-            tabPage2.Controls.Add(label10);
             tabPage2.Controls.Add(label6);
-            tabPage2.Controls.Add(label12);
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(label5);
             resources.ApplyResources(tabPage2, "tabPage2");
             tabPage2.Name = "tabPage2";
+            // 
+            // label_DiscordProject_Link
+            // 
+            resources.ApplyResources(label_DiscordProject_Link, "label_DiscordProject_Link");
+            label_DiscordProject_Link.ForeColor = SystemColors.Highlight;
+            label_DiscordProject_Link.Name = "label_DiscordProject_Link";
+            label_DiscordProject_Link.Click += label_DiscordProject_Link_Click;
+            // 
+            // label_SourceCodeLink
+            // 
+            resources.ApplyResources(label_SourceCodeLink, "label_SourceCodeLink");
+            label_SourceCodeLink.ForeColor = SystemColors.Highlight;
+            label_SourceCodeLink.Name = "label_SourceCodeLink";
+            label_SourceCodeLink.Click += label_SourceCodeLink_Click;
             // 
             // pictureBox6
             // 
@@ -326,26 +340,10 @@
             resources.ApplyResources(label9, "label9");
             label9.Name = "label9";
             // 
-            // label10
-            // 
-            resources.ApplyResources(label10, "label10");
-            label10.Cursor = Cursors.Hand;
-            label10.ForeColor = SystemColors.HotTrack;
-            label10.Name = "label10";
-            label10.Click += label_CollectionSteam_Click;
-            // 
             // label6
             // 
             resources.ApplyResources(label6, "label6");
             label6.Name = "label6";
-            // 
-            // label12
-            // 
-            resources.ApplyResources(label12, "label12");
-            label12.Cursor = Cursors.Hand;
-            label12.ForeColor = SystemColors.HotTrack;
-            label12.Name = "label12";
-            label12.Click += label_CollectionSteam_Click;
             // 
             // label8
             // 
@@ -493,11 +491,11 @@
         private Label label6;
         private Label label8;
         private Label label7;
-        private Label label10;
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
         private Label label11;
-        private Label label12;
         private PictureBox pictureBox7;
+        private Label label_DiscordProject_Link;
+        private Label label_SourceCodeLink;
     }
 }

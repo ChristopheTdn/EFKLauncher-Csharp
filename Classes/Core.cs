@@ -11,6 +11,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -187,5 +188,20 @@ namespace EFKLauncher.Classes
             System.Media.SoundPlayer player = new System.Media.SoundPlayer(son);
             player.Play();
         }
+        /*
+        *    LANGAGE
+        */
+
+        #region LANGAGE
+        static public void ChangeLangage(string langue)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(langue);
+            //SauvegardeLangage(langue);
+        }
+        static private void SauvegardeLangage(string langue)
+        {
+            //GOSLauncherCore.SetKeyValue(@"Software\Clan GOS\GOS Launcher A3\", "langage", langue);
+        }
+        #endregion
     }
 }
