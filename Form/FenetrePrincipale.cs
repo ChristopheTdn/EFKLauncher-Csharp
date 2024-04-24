@@ -9,20 +9,25 @@ using System.IO;
 using Microsoft.Win32;
 using System.Text.Json;
 using System.Globalization;
+using System;
 
 namespace EFKLauncher
 {
     public partial class FenetrePrincipale : Form
     {
+        Form splashscreen = new Splashscreen();
+        string[] argumentGOSLauncher;
         public FenetrePrincipale()
         {
             InitializeComponent();
         }
         private void FenetrePrincipale_Load(object sender, EventArgs e)
         {
+            // splashscreen.Show();
             CheckForIllegalCrossThreadCalls = false;
             // Gestion Maj Parametre sur Interface
-
+            // application Langage
+            // Core.ChangeLangage("en-GB");
             // Profil
             textBox_ProfilPZ.Text = Config.readConfig("profil");
             if (!Directory.Exists(textBox_ProfilPZ.Text))

@@ -95,8 +95,8 @@
             // 
             // pictureBox_EFKLogo
             // 
-            pictureBox_EFKLogo.Image = Ressources.EFK_Ressources.EFK;
             resources.ApplyResources(pictureBox_EFKLogo, "pictureBox_EFKLogo");
+            pictureBox_EFKLogo.Image = Ressources.EFK_Ressources.EFK;
             pictureBox_EFKLogo.Name = "pictureBox_EFKLogo";
             pictureBox_EFKLogo.TabStop = false;
             // 
@@ -115,8 +115,8 @@
             // 
             // picture_Steam
             // 
-            picture_Steam.Image = Ressources.EFK_Ressources.Steam_Icon;
             resources.ApplyResources(picture_Steam, "picture_Steam");
+            picture_Steam.Image = Ressources.EFK_Ressources.Steam_Icon;
             picture_Steam.Name = "picture_Steam";
             picture_Steam.TabStop = false;
             // 
@@ -137,18 +137,18 @@
             // 
             // groupBox_Repertoire
             // 
+            resources.ApplyResources(groupBox_Repertoire, "groupBox_Repertoire");
             groupBox_Repertoire.Controls.Add(textBox_SaveDir);
             groupBox_Repertoire.Controls.Add(label_SaveGame);
             groupBox_Repertoire.Controls.Add(textBox_ProfilPZ);
             groupBox_Repertoire.Controls.Add(label_ProfilPZ);
-            resources.ApplyResources(groupBox_Repertoire, "groupBox_Repertoire");
             groupBox_Repertoire.Name = "groupBox_Repertoire";
             groupBox_Repertoire.TabStop = false;
             // 
             // textBox_SaveDir
             // 
-            textBox_SaveDir.BackColor = SystemColors.ButtonHighlight;
             resources.ApplyResources(textBox_SaveDir, "textBox_SaveDir");
+            textBox_SaveDir.BackColor = SystemColors.ButtonHighlight;
             textBox_SaveDir.Name = "textBox_SaveDir";
             textBox_SaveDir.ReadOnly = true;
             textBox_SaveDir.TextChanged += textBox_SaveDir_TextChanged;
@@ -160,8 +160,8 @@
             // 
             // textBox_ProfilPZ
             // 
-            textBox_ProfilPZ.BackColor = SystemColors.ButtonHighlight;
             resources.ApplyResources(textBox_ProfilPZ, "textBox_ProfilPZ");
+            textBox_ProfilPZ.BackColor = SystemColors.ButtonHighlight;
             textBox_ProfilPZ.Name = "textBox_ProfilPZ";
             textBox_ProfilPZ.ReadOnly = true;
             // 
@@ -170,15 +170,19 @@
             resources.ApplyResources(label_ProfilPZ, "label_ProfilPZ");
             label_ProfilPZ.Name = "label_ProfilPZ";
             // 
+            // folderBrowserDialog1
+            // 
+            resources.ApplyResources(folderBrowserDialog1, "folderBrowserDialog1");
+            // 
             // groupBox_PreInitEFK
             // 
+            resources.ApplyResources(groupBox_PreInitEFK, "groupBox_PreInitEFK");
             groupBox_PreInitEFK.Controls.Add(label_Important);
             groupBox_PreInitEFK.Controls.Add(richTextBox_PreActivationTip);
             groupBox_PreInitEFK.Controls.Add(pictureBox2);
             groupBox_PreInitEFK.Controls.Add(radioButton_NoModif);
             groupBox_PreInitEFK.Controls.Add(radioButton_EFKModPreInstall);
             groupBox_PreInitEFK.Controls.Add(pictureBox1);
-            resources.ApplyResources(groupBox_PreInitEFK, "groupBox_PreInitEFK");
             groupBox_PreInitEFK.Name = "groupBox_PreInitEFK";
             groupBox_PreInitEFK.TabStop = false;
             // 
@@ -190,16 +194,16 @@
             // 
             // richTextBox_PreActivationTip
             // 
+            resources.ApplyResources(richTextBox_PreActivationTip, "richTextBox_PreActivationTip");
             richTextBox_PreActivationTip.BackColor = SystemColors.Control;
             richTextBox_PreActivationTip.BorderStyle = BorderStyle.None;
             richTextBox_PreActivationTip.ForeColor = SystemColors.WindowText;
-            resources.ApplyResources(richTextBox_PreActivationTip, "richTextBox_PreActivationTip");
             richTextBox_PreActivationTip.Name = "richTextBox_PreActivationTip";
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Ressources.EFK_Ressources.accolade;
             resources.ApplyResources(pictureBox2, "pictureBox2");
+            pictureBox2.Image = Ressources.EFK_Ressources.accolade;
             pictureBox2.Name = "pictureBox2";
             pictureBox2.TabStop = false;
             // 
@@ -221,24 +225,24 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Ressources.EFK_Ressources.performance;
             resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Image = Ressources.EFK_Ressources.performance;
             pictureBox1.Name = "pictureBox1";
             pictureBox1.TabStop = false;
             // 
             // tabControl1
             // 
+            resources.ApplyResources(tabControl1, "tabControl1");
             tabControl1.Controls.Add(tabPage_EFKTab);
             tabControl1.Controls.Add(tabPage2);
-            resources.ApplyResources(tabControl1, "tabControl1");
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             // 
             // tabPage_EFKTab
             // 
+            resources.ApplyResources(tabPage_EFKTab, "tabPage_EFKTab");
             tabPage_EFKTab.BackColor = SystemColors.Control;
             tabPage_EFKTab.Controls.Add(richTextBox_Log);
-            resources.ApplyResources(tabPage_EFKTab, "tabPage_EFKTab");
             tabPage_EFKTab.Name = "tabPage_EFKTab";
             // 
             // richTextBox_Log
@@ -248,6 +252,7 @@
             // 
             // tabPage2
             // 
+            resources.ApplyResources(tabPage2, "tabPage2");
             tabPage2.BackColor = SystemColors.Control;
             tabPage2.Controls.Add(label_DiscordProject_Link);
             tabPage2.Controls.Add(label_SourceCodeLink);
@@ -262,7 +267,6 @@
             tabPage2.Controls.Add(label6);
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(label5);
-            resources.ApplyResources(tabPage2, "tabPage2");
             tabPage2.Name = "tabPage2";
             // 
             // label_DiscordProject_Link
@@ -281,16 +285,16 @@
             // 
             // pictureBox6
             // 
-            pictureBox6.Image = Ressources.EFK_Ressources.tof;
             resources.ApplyResources(pictureBox6, "pictureBox6");
+            pictureBox6.Image = Ressources.EFK_Ressources.tof;
             pictureBox6.Name = "pictureBox6";
             pictureBox6.TabStop = false;
             // 
             // groupBox1
             // 
+            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(pictureBox7);
-            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
             // 
@@ -301,8 +305,8 @@
             // 
             // pictureBox7
             // 
-            pictureBox7.Image = Ressources.EFK_Ressources.info;
             resources.ApplyResources(pictureBox7, "pictureBox7");
+            pictureBox7.Image = Ressources.EFK_Ressources.info;
             pictureBox7.Name = "pictureBox7";
             pictureBox7.TabStop = false;
             // 
@@ -313,15 +317,15 @@
             // 
             // pictureBox5
             // 
-            pictureBox5.Image = Ressources.EFK_Ressources.tt;
             resources.ApplyResources(pictureBox5, "pictureBox5");
+            pictureBox5.Image = Ressources.EFK_Ressources.tt;
             pictureBox5.Name = "pictureBox5";
             pictureBox5.TabStop = false;
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Ressources.EFK_Ressources.EFK;
             resources.ApplyResources(pictureBox4, "pictureBox4");
+            pictureBox4.Image = Ressources.EFK_Ressources.EFK;
             pictureBox4.Name = "pictureBox4";
             pictureBox4.TabStop = false;
             // 
@@ -357,27 +361,27 @@
             // 
             // pictureBox_TwitchLogo
             // 
+            resources.ApplyResources(pictureBox_TwitchLogo, "pictureBox_TwitchLogo");
             pictureBox_TwitchLogo.Cursor = Cursors.Hand;
             pictureBox_TwitchLogo.Image = Ressources.EFK_Ressources.Twitch_logo;
-            resources.ApplyResources(pictureBox_TwitchLogo, "pictureBox_TwitchLogo");
             pictureBox_TwitchLogo.Name = "pictureBox_TwitchLogo";
             pictureBox_TwitchLogo.TabStop = false;
             pictureBox_TwitchLogo.Click += pictureBox_TwitchLogo_Click;
             // 
             // pictureBox_YoutubeLogo
             // 
+            resources.ApplyResources(pictureBox_YoutubeLogo, "pictureBox_YoutubeLogo");
             pictureBox_YoutubeLogo.Cursor = Cursors.Hand;
             pictureBox_YoutubeLogo.Image = Ressources.EFK_Ressources.youtube;
-            resources.ApplyResources(pictureBox_YoutubeLogo, "pictureBox_YoutubeLogo");
             pictureBox_YoutubeLogo.Name = "pictureBox_YoutubeLogo";
             pictureBox_YoutubeLogo.TabStop = false;
             pictureBox_YoutubeLogo.Click += pictureBox_YoutubeLogo_Click;
             // 
             // pictureBox_DiscordLogo
             // 
+            resources.ApplyResources(pictureBox_DiscordLogo, "pictureBox_DiscordLogo");
             pictureBox_DiscordLogo.Cursor = Cursors.Hand;
             pictureBox_DiscordLogo.Image = Ressources.EFK_Ressources.discord;
-            resources.ApplyResources(pictureBox_DiscordLogo, "pictureBox_DiscordLogo");
             pictureBox_DiscordLogo.Name = "pictureBox_DiscordLogo";
             pictureBox_DiscordLogo.TabStop = false;
             pictureBox_DiscordLogo.Click += pictureBox_DiscordLogo_Click;
@@ -401,6 +405,7 @@
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
+            resources.ApplyResources(openFileDialog1, "openFileDialog1");
             // 
             // FenetrePrincipale
             // 
