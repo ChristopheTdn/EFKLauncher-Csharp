@@ -61,6 +61,31 @@ v1.77 : 2024/02/23
     - [CHANGE] Use new Sound system (pysound)
     - [CHANGE] new Whoosh sound effect
 
+v2.00 : 2024/03/26 MAJOR UPGRADE VERSION
+    - [CHANGE] Total revision for C44 release
+
+v2.01 : 2024/03/27 
+    - [FIX] review SurvivorOptions.lua copy
+
+
+V2.02 : 2024/03/28
+    - [CHANGE] Force Auto Update when version is not the same
+
+v 2.10 : 2024/04/23
+    - [CHANGE] version Release Update  C44.01
+    
+v 2.11 : 2024/04/24 
+    - [FIX] Defaut.txt not calling tradPack and some other mod
+
+v2.12 : 2024/04/25
+    -  [ADD] Some Mods in defaut.txt
+
+v2.13 : 2024/04/26
+    -  [CHANGE] delete obsolete EFK Easy.cfg and EFK Hard.cfg
+    
+v2.50 : 2024/05/31
+    - Release for EFK v. C44.02
+
 
 
 

@@ -10,6 +10,7 @@ using Microsoft.Win32;
 using System.Text.Json;
 using System.Globalization;
 using System;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EFKLauncher
 {
@@ -66,18 +67,28 @@ namespace EFKLauncher
 
 
 
-            //Copyfile
+            // Difficulty
 
-            Core.copyFile(@"Config\difficulty\EFK Easy.cfg",
-                            textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK Easy.cfg"
-                         );
-            Core.copyFile(@"Config\difficulty\EFK Hard.cfg",
-                            textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK Hard.cfg"
-                         );
             Core.copyFile(@"Config\difficulty\EFK STD.cfg",
                              textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK STD.cfg"
                          );
-            Core.WriteLog(richTextBox_Log, "Install SandBox Presets : EFK Easy.cfg, EFK Hard.cfg, EFK STD.cfg");
+            Core.WriteLog(richTextBox_Log, "Install SandBox Presets :  EFK STD.cfg (remove obsolete HARD and Easy settings if needed)");
+
+            // remove Obsolete difficulty EFK Easy.cfg, EFK Hard.cfg,
+            try
+            {
+                if (File.Exists(textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK Easy.cfg"))
+                {
+                    File.Delete(textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK Easy.cfg");
+                }
+                if (File.Exists(textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK Hard.cfg"))
+                {
+                    File.Delete(textBox_ProfilPZ.Text + @"\Sandbox Presets\EFK Hard.cfg");
+                }
+            }
+            catch
+            {
+            }
 
 
 

@@ -39,8 +39,6 @@
 
   <ItemGroup>
     <None Remove="Config\delfile\fichiers.txt" />
-    <None Remove="Config\difficulty\EFK Easy.cfg" />
-    <None Remove="Config\difficulty\EFK Hard.cfg" />
     <None Remove="Config\difficulty\EFK STD.cfg" />
     <None Remove="Config\EFK\AdvancedEFK_default.txt" />
     <None Remove="Config\EFK\default.txt" />
@@ -76,12 +74,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Config\difficulty\EFK Easy.cfg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Config\difficulty\EFK Hard.cfg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Config\difficulty\EFK STD.cfg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
