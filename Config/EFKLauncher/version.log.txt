@@ -98,5 +98,8 @@ v2.80 : 2024/11/02
 v2.81 : 2024/11/14
     - [CHANGE] Maj List Mod
 
+v2.90 : 2024/06/18
+    - Maj Modlist
+
 
 
