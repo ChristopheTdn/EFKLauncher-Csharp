@@ -99,7 +99,10 @@ v2.81 : 2024/11/14
     - [CHANGE] Maj List Mod
 
 v2.90 : 2024/06/18
-    - Maj Modlist
+    - [CHANGE] Maj Modlist
+
+v2.91 : 
+    - [FIX] Fiix beaten treats bugs in Modlist
 
 
 
